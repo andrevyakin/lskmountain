@@ -4,4 +4,5 @@
 
 @theme {
     --font-prata: "Prata", "sans-serif";
+    --breakpoint-3xl: 105rem;
 }
