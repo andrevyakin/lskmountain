@@ -1,0 +1,22 @@
+[
+  {
+    "id": 1,
+    "item": "Главная",
+    "href": "#hero"
+  },
+  {
+    "id": 2,
+    "item": "Продукция",
+    "href": "#products"
+  },
+  {
+    "id": 3,
+    "item": "О нас",
+    "href": "#about"
+  },
+  {
+    "id": 4,
+    "item": "Контакты",
+    "href": "#contacts"
+  }
+]

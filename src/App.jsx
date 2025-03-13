@@ -1,14 +1,18 @@
 import Hero from './pages/Hero.jsx';
-import Navbar from './components/Navbar.jsx';
+import Navbar from './pages/Navbar.jsx';
 import Products from './pages/Products.jsx';
+import About from './pages/About.jsx';
+import Contacts from './pages/Contacts.jsx';
 
 const App = () => {
   return (
-    <div>
+    <>
       <Navbar />
       <Hero />
       <Products />
-    </div>
+      <About />
+      <Contacts />
+    </>
   );
 };
 export default App;
