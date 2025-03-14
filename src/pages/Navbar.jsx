@@ -10,9 +10,9 @@ const Navbar = () => {
 
   return (
     <div className='relative'>
-      <div className=' fixed top-0 left-0 right-0 z-10 bg-[#222222] bg-[url(/bg_mountain.png)] brightness-110'>
+      <div className=' fixed top-0 left-0 right-0 z-10 bg-[#242424] bg-[url(/bg_mountain.png)] brightness-150'>
         <nav className='flex justify-evenly items-center mx-16 px-28 font-prata text-xs xl:text-base 2xl:text-2xl 3xl:text-3xl text-[#F0F0F0] uppercase tracking-wider border-x border-b border-[#F0F0F0]'>
-          <img src={logo} alt='ЛСК' className='pt-6' />
+          <img src={logo} alt='ЛСК' className='' />
 
           {navbar.map((item) => (
             <ItemNavbar

@@ -4,9 +4,12 @@ import photo2 from '../assets/hero-2.png';
 const Hero = () => {
   return (
     <>
-      <div id="hero" className='h-dvh bg-[url(/bg_mountain.png)] pt-20 bg-no-repeat bg-cover bg-[#222222]'>
+      <div
+        id='hero'
+        className='bg-[url(/bg_mountain.png)] bg-no-repeat bg-cover bg-[#242424] opacity-90'
+      >
         {/*для 4-х элементов*/}
-        <div className='flex flex-col justify-evenly gap-24 mx-16 px-44 pt-32 pb-20 border-x border-[#F0F0F0]'>
+        <div className='flex flex-col justify-evenly gap-24 mx-16 px-44 pt-64 pb-20 border-x border-[#F0F0F0]'>
           {/*для двух верхних элементов*/}
           <div className='flex justify-center'>
             {/*верхний левый элемент*/}
