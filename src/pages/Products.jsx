@@ -4,9 +4,9 @@ const Products = () => {
   return (
     <div
       id='products'
-      className='bg-[url(/bg_products.png)] bg-no-repeat bg-cover bg-[#242424] opacity-70 contrast-125 brightness-110'
+      className='h-dvh bg-[url(/bg_products.png)] bg-no-repeat bg-cover bg-[#242424] opacity-70 contrast-125 brightness-110'
     >
-      <div className='h-dvh mx-16 py-16 border border-[#242424]'>
+      <div className='mx-16 pt-60 pb-16 border border-[#242424]'>
         <h1 className='font-prata text-6xl uppercase text-center text-[#242424]'>
           Щебень
         </h1>
