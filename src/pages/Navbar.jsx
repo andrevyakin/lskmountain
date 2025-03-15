@@ -28,16 +28,16 @@ const Navbar = () => {
   useEffect(() => {
     const listener = () => {
       setScrollY(window.scrollY);
-      if (scrollY < height - heightNavbar)
+      if (scrollY <= height - heightNavbar)
         setBgHeader(
           'bg-[url(/bg_mountain.png)] bg-[#242424] text-[#F0F0F0] brightness-150',
         );
-      else if (
-        scrollY >= height - heightNavbar &&
-        scrollY < height
-      )
+      else if (scrollY > height - heightNavbar && scrollY < height)
         setBgHeader('bg-transparent mix-blend-difference');
-      else setBgHeader('bg-[url(/bg_products.png)] bg-cover bg-[#242424] contrast-125 brightness-115 text-[#242424]');
+      else
+        setBgHeader(
+          'bg-[url(/bg_products.png)] bg-cover bg-[#242424] contrast-125 brightness-115 text-[#242424]',
+        );
     };
     window.addEventListener('scroll', listener);
 
@@ -48,13 +48,13 @@ const Navbar = () => {
 
   return (
     <>
-      {/*<div className='fixed top-50 text-5xl left-0 text-red-800 z-20'>
+      <div className='fixed top-50 text-5xl left-0 text-red-800 z-20'>
         <p>height = {height}</p>
         <p>heightNavbar = {heightNavbar}</p>
         <p>height + heightNavbar = {height - heightNavbar}</p>
         <p>window.scrollY = {scrollY}</p>
         {bgHeader}
-      </div>*/}
+      </div>
       <div className='relative'>
         <div className={`fixed top-0 left-0 right-0 z-10 ${bgHeader}`}>
           <nav
