@@ -1,7 +1,7 @@
 import logo from '../assets/logo.png';
 import phone from '../assets/phone.png';
 import email from '../assets/mail.png';
-import { useLocation } from 'react-router-dom';
+import { redirect, useLocation } from 'react-router-dom';
 import navbar from '../constants/navbar.json';
 import ItemNavbar from '../components/itemNavbar.jsx';
 import { useEffect, useRef, useState } from 'react';
@@ -40,7 +40,7 @@ const Navbar = () => {
         );
     };
     window.addEventListener('scroll', listener);
-
+    //redirect(navbar[Math.floor(scrollY / height)].href);
     return () => {
       window.removeEventListener('scroll', listener);
     };
@@ -48,13 +48,13 @@ const Navbar = () => {
 
   return (
     <>
-      <div className='fixed top-50 text-5xl left-0 text-red-800 z-20'>
+      {/* <div className='fixed top-50 text-5xl left-0 text-red-800 z-20'>
         <p>height = {height}</p>
         <p>heightNavbar = {heightNavbar}</p>
         <p>height + heightNavbar = {height - heightNavbar}</p>
         <p>window.scrollY = {scrollY}</p>
         {bgHeader}
-      </div>
+      </div>*/}
       <div className='relative'>
         <div className={`fixed top-0 left-0 right-0 z-10 ${bgHeader}`}>
           <nav
@@ -67,7 +67,7 @@ const Navbar = () => {
               <ItemNavbar
                 item={item.item}
                 key={item.id}
-                path={pathname.hash}
+                path={navbar[Math.floor(scrollY / height)].href}
                 href={item.href}
                 color={scrollY > height ? 'bg-[#242424]' : 'bg-[#F0F0F0]'}
               />
