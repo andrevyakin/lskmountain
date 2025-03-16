@@ -1,14 +1,14 @@
 import logo from '../assets/logo.png';
 import phone from '../assets/phone.png';
 import email from '../assets/mail.png';
-import { redirect, useLocation } from 'react-router-dom';
+//import { redirect, useLocation } from 'react-router-dom';
 import navbar from '../constants/navbar.json';
 import ItemNavbar from '../components/itemNavbar.jsx';
 import { useEffect, useRef, useState } from 'react';
 import useWindowDimensions from '../hook/useWindowDimensions.js';
 
 const Navbar = () => {
-  const pathname = useLocation();
+  //const pathname = useLocation();
   const [bgHeader, setBgHeader] = useState(
     'bg-[url(/bg_mountain.png)] bg-[#242424] text-[#F0F0F0] brightness-150',
   );
@@ -32,15 +32,16 @@ const Navbar = () => {
         setBgHeader(
           'bg-[url(/bg_mountain.png)] bg-[#242424] text-[#F0F0F0] brightness-150',
         );
-      else if (scrollY > height - heightNavbar && scrollY < height)
-        setBgHeader('bg-transparent mix-blend-difference');
+      else if (scrollY > height - heightNavbar && scrollY < height - 1)
+        setBgHeader(
+          'bg-transparent mix-blend-difference transition delay-150 duration-300 ease-in-out',
+        );
       else
         setBgHeader(
           'bg-[url(/bg_products.png)] bg-cover bg-[#242424] contrast-125 brightness-115 text-[#242424]',
         );
     };
     window.addEventListener('scroll', listener);
-    //redirect(navbar[Math.floor(scrollY / height)].href);
     return () => {
       window.removeEventListener('scroll', listener);
     };
@@ -48,10 +49,10 @@ const Navbar = () => {
 
   return (
     <>
-      {/* <div className='fixed top-50 text-5xl left-0 text-red-800 z-20'>
+      {/*<div className='fixed top-50 text-5xl left-0 text-red-800 z-20'>
         <p>height = {height}</p>
         <p>heightNavbar = {heightNavbar}</p>
-        <p>height + heightNavbar = {height - heightNavbar}</p>
+        <p>height - heightNavbar = {height - heightNavbar}</p>
         <p>window.scrollY = {scrollY}</p>
         {bgHeader}
       </div>*/}
@@ -69,7 +70,7 @@ const Navbar = () => {
                 key={item.id}
                 path={navbar[Math.floor(scrollY / height)].href}
                 href={item.href}
-                color={scrollY > height ? 'bg-[#242424]' : 'bg-[#F0F0F0]'}
+                color={scrollY >= height ? 'bg-[#242424]' : 'bg-[#F0F0F0]'}
               />
             ))}
             <div className='flex flex-col gap-1.5'>

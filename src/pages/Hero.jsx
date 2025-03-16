@@ -6,7 +6,7 @@ const Hero = () => {
     <>
       <div
         id='hero'
-        className='bg-[url(/bg_mountain.png)] bg-no-repeat bg-cover bg-[#242424] opacity-90'
+        className='h-dvh bg-[url(/bg_mountain.png)] bg-no-repeat bg-cover bg-[#242424] opacity-90'
       >
         {/*для 4-х элементов*/}
         <div className='flex flex-col justify-evenly gap-16 mx-16 px-44 pt-52 pb-24 border-x border-[#F0F0F0]'>
