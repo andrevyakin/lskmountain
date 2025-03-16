@@ -1,5 +1,4 @@
-import photo1 from '../assets/hero-1.png';
-import photo2 from '../assets/hero-2.png';
+import {hero1, hero2} from '../assets'
 
 const Hero = () => {
   return (
@@ -30,7 +29,7 @@ const Hero = () => {
             {/*верхний правый элемент*/}
             <div className='flex-1 border border-[#F0F0F0]'>
               <img
-                src={photo1}
+                src={hero1}
                 alt='Фото1'
                 className='object-cover w-full h-full'
               />
@@ -42,7 +41,7 @@ const Hero = () => {
             {/*нижний левый элемент*/}
             <div className='flex-1 border border-[#F0F0F0]'>
               <img
-                src={photo2}
+                src={hero2}
                 alt=' Фото2'
                 className='object-cover w-full h-full'
               />
