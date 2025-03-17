@@ -1,4 +1,4 @@
 const About = () => {
-  return <div id='about' className="h-dvh">About</div>;
+  return <section id='about' className="h-dvh">About</section>;
 };
 export default About;

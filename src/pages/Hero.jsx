@@ -3,9 +3,9 @@ import {hero1, hero2} from '../assets'
 const Hero = () => {
   return (
     <>
-      <div
+      <section
         id='hero'
-        className='h-dvh bg-[url(/bg_mountain.png)] bg-no-repeat bg-cover bg-[#242424] opacity-90'
+        className='bg-[url(/bg_mountain.png)] bg-no-repeat bg-cover bg-[#242424] opacity-90'
       >
         {/*для 4-х элементов*/}
         <div className='flex flex-col justify-evenly gap-16 mx-16 px-44 pt-52 pb-24 border-x border-[#F0F0F0]'>
@@ -60,7 +60,7 @@ const Hero = () => {
         <div className='mx-11 border-t border-[#F0F0F0]'>
           <div className='h-8 mx-5 border-x border-[#F0F0F0]'></div>
         </div>
-      </div>
+      </section>
     </>
   );
 };

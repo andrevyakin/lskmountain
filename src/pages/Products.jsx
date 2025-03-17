@@ -3,11 +3,11 @@ import ProductCard from '../components/ProductCard.jsx';
 
 const Products = () => {
   return (
-    <div
+    <section
       id='products'
       className='bg-[url(/bg_products.png)] bg-no-repeat bg-cover bg-[#242424] opacity-70 contrast-125 brightness-110'
     >
-      <div className='mx-16 pt-52 pb-16 border border-[#242424]'>
+      <div className='mx-16 pt-24 pb-16 border border-[#242424]'>
         {category.map((category) => (
           <div
             key={category._id}
@@ -32,7 +32,7 @@ const Products = () => {
           </div>
         ))}
       </div>
-    </div>
+    </section>
   );
 };
 export default Products;

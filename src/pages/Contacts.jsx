@@ -1,4 +1,4 @@
 const Contacts = () => {
-  return <div id='contacts' className="h-dvh">Contacts</div>;
+  return <section id='contacts' className="h-dvh">Contacts</section>;
 };
 export default Contacts;
