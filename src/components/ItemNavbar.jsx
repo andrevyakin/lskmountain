@@ -1,13 +1,33 @@
 import { Link } from 'react-scroll';
+import { useEffect, useState } from 'react';
 
-const ItemNavbar = ({ href, item, path, color }) => {
+const ItemNavbar = ({ id, item }) => {
+  const [heightNavbar, setHeightNavbar] = useState(0);
+  useEffect(() => {
+    const navbar = document.getElementsByTagName('nav');
+    setHeightNavbar(navbar[0].clientHeight * -1);
+  }, [heightNavbar]);
+
   return (
-    <a href={href} className='flex flex-col items-center mt-7'>
+    <Link
+      className='flex flex-col items-center mt-7'
+      activeClass='underline underline-offset-8'
+      to={id}
+      spy={true}
+      smooth={false}
+      offset={heightNavbar}
+      duration={0}
+    >
       {item}
-      <hr
-        className={`w-3/4 border-none h-[1.5px] ${path === href ? color : ''}`}
-      />
-    </a>
+    </Link>
   );
 };
 export default ItemNavbar;
+
+/*
+  activeClass — класс, применяемый при достижении элемента.
+  to — цель прокрутки.
+  spy — выделение Link при достижении целевой позиции scroll.
+  smooth — анимация прокрутки.
+  offset — прокрутка дополнительных пикселей (например, оформления).
+  duration — время анимации прокрутки. Это может быть число или функция.*/
