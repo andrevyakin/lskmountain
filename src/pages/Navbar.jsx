@@ -20,8 +20,9 @@ const Navbar = () => {
         >
           <nav
             className='flex justify-evenly items-center mx-16 px-0 lg:px-28 py-3 font-prata text-xs xl:text-base 2xl:text-2xl 3xl:text-3xl uppercase tracking-wider border-x border-b '
+
           >
-            <div className='h-min-[50px] w-min-[135px] 2xl:h-[100px] 2xl:w-[270px]'>
+            <div className='h-min-[50px] w-min-[135px] 2xl:h-[100px] 2xl:w-[270px] cursor-pointer'>
               <img
                 src={logoLight}
                 alt='ЛСК'

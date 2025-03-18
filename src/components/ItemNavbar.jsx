@@ -10,13 +10,13 @@ const ItemNavbar = ({ id, item }) => {
 
   return (
     <Link
-      className='flex flex-col items-center mt-7'
+      className='flex flex-col items-center mt-7 cursor-pointer'
       activeClass='underline underline-offset-8'
       to={id}
       spy={true}
-      smooth={false}
+      smooth={true}
       offset={heightNavbar}
-      duration={0}
+      duration={900}
     >
       {item}
     </Link>

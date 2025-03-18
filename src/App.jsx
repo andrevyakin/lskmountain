@@ -1,8 +1,7 @@
 import Hero from './pages/Hero.jsx';
 import Navbar from './pages/Navbar.jsx';
 import Products from './pages/Products.jsx';
-import About from './pages/About.jsx';
-import Contacts from './pages/Contacts.jsx';
+import ContactHistory from './pages/Contact&history.jsx';
 
 const App = () => {
   return (
@@ -10,8 +9,7 @@ const App = () => {
       <Navbar />
       <Hero />
       <Products />
-      <About />
-      <Contacts />
+      <ContactHistory />
     </>
   );
 };

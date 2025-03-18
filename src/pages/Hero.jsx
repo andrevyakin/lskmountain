@@ -1,4 +1,5 @@
-import {hero1, hero2} from '../assets'
+import { hero1, hero2 } from '../assets';
+import PageFooter from '../components/PageFooter.jsx';
 
 const Hero = () => {
   return (
@@ -57,9 +58,7 @@ const Hero = () => {
             </div>
           </div>
         </div>
-        <div className='mx-11 border-t border-[#F0F0F0]'>
-          <div className='h-8 mx-5 border-x border-[#F0F0F0]'></div>
-        </div>
+        <PageFooter color={'border-[#F0F0F0]'}/>
       </section>
     </>
   );

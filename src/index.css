@@ -2,9 +2,9 @@
 
 @import "tailwindcss";
 
-* {
+/** {
     scroll-behavior: smooth
-}
+}*/
 
 @theme {
     --font-prata: "Prata", "sans-serif";
