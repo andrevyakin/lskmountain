@@ -1,4 +1,4 @@
-import { logoLight, mailLight, phoneLight } from '../assets';
+import { logoLight, mailLight, phoneLight } from '../assets/index.js';
 import navbar from '../constants/navbar.json';
 import ItemNavbar from '../components/ItemNavbar.jsx';
 import { animateScroll as scroll } from 'react-scroll';
