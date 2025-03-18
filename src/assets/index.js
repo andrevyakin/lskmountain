@@ -6,6 +6,8 @@ import phoneLight from './phone.png';
 import wagon from './wagon.png';
 import skill from './skill.png';
 import experience from './experience.png';
+import arrowLeft from './arrowLeft.png';
+import arrowRight from './arrowRight.png';
 
 export {
   hero1,
@@ -16,4 +18,6 @@ export {
   wagon,
   skill,
   experience,
+  arrowLeft,
+  arrowRight,
 };

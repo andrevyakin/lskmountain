@@ -4,7 +4,7 @@ import certificateC from './certificateC.png';
 import certificateRq from './certificateRQ.png';
 import declarationA from './declarationA.png';
 import declarationAevro from './declarationAevro.png';
-import license from './licenseA.png';
+import license from './license.png';
 
 export const certificates = [
   certificateA,
