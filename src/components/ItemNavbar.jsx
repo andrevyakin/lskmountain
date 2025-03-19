@@ -16,7 +16,7 @@ const ItemNavbar = ({ id, item }) => {
       spy={true}
       smooth={true}
       offset={heightNavbar}
-      duration={900}
+      duration={500}
     >
       {item}
     </Link>

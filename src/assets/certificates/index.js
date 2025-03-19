@@ -7,11 +7,11 @@ import declarationAevro from './declarationAevro.png';
 import license from './license.png';
 
 export const certificates = [
+  license,
   certificateA,
   certificateB,
   certificateC,
-  certificateRq,
   declarationA,
   declarationAevro,
-  license,
+  certificateRq,
 ];

@@ -34,26 +34,7 @@ const Products = () => {
             </div>
           </div>
         ))}
-        <div className='font-prata text-6xl font-medium tracking-widest uppercase text-center text-[#242424]'>
-          наши преимущества
-          <div className='flex justify-evenly mt-8 px-64'>
-            <Skill
-              image={wagon}
-              alt={'ЖД'}
-              text={`Возможность\nдоставки\nжелезнодорожным\nтранспортом`}
-            />
-            <Skill
-              image={skill}
-              alt={'V'}
-              text={`Высокие\nпоказатели\nматериала`}
-            />
-            <Skill
-              image={experience}
-              alt={'V'}
-              text={`Опыт работы\nболее 18 лет`}
-            />
-          </div>
-        </div>
+
       </div>
       <PageFooter color={'border-[#242424]'} />
     </section>
