@@ -3,12 +3,54 @@ import { useEffect, useState } from 'react';
 
 const ItemNavbar = ({ id, item }) => {
   const [heightNavbar, setHeightNavbar] = useState(0);
+  const [heightContacts, setHeightContacts] = useState(0);
+  const [heightTotal, setHeightTotal] = useState(0);
+  const [scrollPosition, setScrollPosition] = useState(0);
+
+  const [isActive, setIsActive] = useState(false);
+
   useEffect(() => {
     const navbar = document.getElementsByTagName('nav');
-    setHeightNavbar(navbar[0].clientHeight * -1);
-  }, [heightNavbar]);
+    const contacts = document.getElementById('contacts');
 
-  return (
+    setHeightNavbar(navbar[0].clientHeight * -1);
+    setHeightContacts(contacts.clientHeight);
+    setHeightTotal(document.documentElement.scrollHeight);
+
+    console.log(window.scrollY);
+
+    const handleScroll = () => {
+      const position = window.scrollY
+      setScrollPosition(position);
+    };
+
+    if (window.scrollY >= heightTotal - contacts) {
+      setIsActive(true);
+    } else {
+      setIsActive(false);
+    }
+
+    document.addEventListener("scroll", handleScroll);
+
+    return () => {
+      document.removeEventListener("scroll", handleScroll);
+    };
+
+  }, [heightNavbar, heightContacts, heightTotal, scrollPosition]);
+
+  return isActive ? (
+    <Link
+      className='flex flex-col items-center mt-7 cursor-pointer'
+      activeClass='underline underline-offset-8'
+      to={id}
+      spy={false}
+      smooth={true}
+      offset={heightNavbar}
+      duration={500}
+    >
+      {item}
+    </Link>
+  ) : (
     <Link
       className='flex flex-col items-center mt-7 cursor-pointer'
       activeClass='underline underline-offset-8'

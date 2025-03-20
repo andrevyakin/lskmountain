@@ -41,21 +41,14 @@ const Contacts = () => {
     >
       <div className='flex flex-wrap'>
         <div className='w-1/2'>
-          {isLoaded ? (
+          {isLoaded && (
             <div className=''>
               <div
                 id='map'
-                className='pt-3 '
+                className='pt-3 overflow-hidden'
                 /*высота карты. цифра - для ручной регулировки*/
                 style={{ height: heightMap + 0 }}
               />
-            </div>
-          ) : (
-            <div className=' w-full justify-center items-center'>
-              {/*<img className="h-full border-1 border-grad rounded-xl"
-                       src={logo}
-                       style={{ height: heightMap - 80, maxHeight: 332, maxWidth: 1054 }}
-                       alt="Your Company" />*/}
             </div>
           )}
         </div>
@@ -67,7 +60,7 @@ const Contacts = () => {
             контакты
           </h1>
           <p className='mt-2 font-prata text-center text-[#f0f0f0] whitespace-pre'>
-            {`+7 (959) 222 22-22\nooolsklpr@mail.ru\nЮр. адрес: ДНР, Донецк, ул. Фёдора Зайцева 46\nАдрес карьера: ЛНР, с. Ковыльное, ул. Пролетарская 38`}
+            {`+7 (959) 222 22-22\nooolsklpr@mail.ru\nЮр. адрес: ДНР, Донецк, ул. Фёдора Зайцева, 75/20\nАдрес карьера: ЛНР, с. Ковыльное, ул. Пролетарская 38`}
           </p>
         </div>
       </div>

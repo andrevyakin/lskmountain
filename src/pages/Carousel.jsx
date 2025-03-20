@@ -1,6 +1,5 @@
 import { useState } from 'react';
 import { certificates as slides } from '../assets/certificates';
-import { arrowRight } from '../assets/';
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
 
 const Carousel = () => {
@@ -42,7 +41,7 @@ const Carousel = () => {
         />
       </div>
 
-      <div className='flex mt-4 pr-2 border border-1 border-[#242424]'>
+      <div className='flex mt-4 pr-2 border  border-[#242424]'>
         {slides.map((slide, slideIndex) => (
           <div
             key={slideIndex}
