@@ -1,66 +1,55 @@
-import { Link } from 'react-scroll';
+import { Link, scroller } from 'react-scroll';
 import { useEffect, useState } from 'react';
+import { useLocation } from 'react-router-dom';
 
-const ItemNavbar = ({ id, item }) => {
+const ItemNavbar = ({  href, id, item, path }) => {
+  //const pathname = useLocation();
   const [heightNavbar, setHeightNavbar] = useState(0);
-  const [heightContacts, setHeightContacts] = useState(0);
-  const [heightTotal, setHeightTotal] = useState(0);
-  const [scrollPosition, setScrollPosition] = useState(0);
+console.log('href, id, path ', href, id, path)
 
-  const [isActive, setIsActive] = useState(false);
+  const navbar = document.getElementsByTagName('nav');
 
   useEffect(() => {
-    const navbar = document.getElementsByTagName('nav');
-    const contacts = document.getElementById('contacts');
-
-    setHeightNavbar(navbar[0].clientHeight * -1);
-    setHeightContacts(contacts.clientHeight);
-    setHeightTotal(document.documentElement.scrollHeight);
-
-    console.log(window.scrollY);
-
     const handleScroll = () => {
-      const position = window.scrollY
-      setScrollPosition(position);
+      setHeightNavbar(navbar[0].clientHeight * -1);
     };
-
-    if (window.scrollY >= heightTotal - contacts) {
-      setIsActive(true);
-    } else {
-      setIsActive(false);
-    }
-
-    document.addEventListener("scroll", handleScroll);
-
+    document.addEventListener('scroll', handleScroll);
     return () => {
-      document.removeEventListener("scroll", handleScroll);
+      document.removeEventListener('scroll', handleScroll);
     };
+  }, [navbar,href, path]);
 
-  }, [heightNavbar, heightContacts, heightTotal, scrollPosition]);
+  const scrollTo = () => {
+    scroller.scrollTo(id, {
+      duration: 800,
+      delay: 0,
+      smooth: 'easeInOutQuart'
+    })
+  }
 
-  return isActive ? (
+  return  (
+
+    /*<a href={href} onClick={() => scrollTo()} className='flex flex-col items-center mt-7'>
+      {item}
+      <hr
+        className={`w-3/4 border-none h-[1.5px] ${pathname.hash === href ?'bg-[#F0F0F0]' : ''}`}
+      />
+    </a>*/
     <Link
       className='flex flex-col items-center mt-7 cursor-pointer'
       activeClass='underline underline-offset-8'
       to={id}
       spy={false}
+      hashSpy={true}
       smooth={true}
       offset={heightNavbar}
       duration={500}
+
     >
       {item}
-    </Link>
-  ) : (
-    <Link
-      className='flex flex-col items-center mt-7 cursor-pointer'
-      activeClass='underline underline-offset-8'
-      to={id}
-      spy={true}
-      smooth={true}
-      offset={heightNavbar}
-      duration={500}
-    >
-      {item}
+      <hr
+        className={`w-3/4 border-none h-[1.5px] ${path === href ?'bg-[#F0F0F0]' : ''}`}
+      />
     </Link>
   );
 };

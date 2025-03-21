@@ -47,7 +47,7 @@ const Contacts = () => {
                 id='map'
                 className='pt-3 overflow-hidden'
                 /*высота карты. цифра - для ручной регулировки*/
-                style={{ height: heightMap + 0 }}
+                style={{ height: heightMap + 100 }}
               />
             </div>
           )}
@@ -64,6 +64,7 @@ const Contacts = () => {
           </p>
         </div>
       </div>
+      <div className='hidden h-1/2'></div>
     </section>
   );
 };

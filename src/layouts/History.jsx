@@ -5,7 +5,10 @@ import { experience, skill, wagon } from '../assets/index.js';
 const History = () => {
   return (
     <>
-      <div id='about' className='bg-[url(/bg_products.png)] bg-no-repeat bg-cover bg-[#242424] opacity-70 contrast-125 brightness-110'>
+      <div
+        id='about'
+        className='bg-[url(/bg_products.png)] bg-no-repeat bg-cover bg-[#242424] opacity-70 contrast-125 brightness-110'
+      >
         <div className='mx-16 pt-8 pb-8 border-x border-[#242424]'>
           <section className=''>
             <div className='flex'>
@@ -32,7 +35,9 @@ const History = () => {
               </div>
             </div>
           </section>
-          <div className='font-prata mt-8 text-6xl font-medium tracking-widest uppercase text-center text-[#242424]'>
+          <div
+            className='font-prata mt-8 text-6xl font-medium tracking-widest uppercase text-center text-[#242424]'
+          >
             наши преимущества
             <div className='flex justify-evenly mt-8 px-2 2xl:px-64'>
               <Skill
