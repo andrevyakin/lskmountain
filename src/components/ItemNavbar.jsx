@@ -1,13 +1,15 @@
-import { Link, scroller } from 'react-scroll';
-import { useEffect, useState } from 'react';
-import { useLocation } from 'react-router-dom';
+import { Link } from 'react-scroll';
+import { useState } from 'react';
 
-const ItemNavbar = ({  href, id, item, path }) => {
+const ItemNavbar = ({ id, item }) => {
   //const pathname = useLocation();
-  const [heightNavbar, setHeightNavbar] = useState(0);
-console.log('href, id, path ', href, id, path)
-
-  const navbar = document.getElementsByTagName('nav');
+  //const [heightNavbar, setHeightNavbar] = useState(0);
+  const [activeLink, setActiveLink] = useState(null);
+  const [inactiveLink, setInactiveLink] = useState(null);
+ /* console.log('activeLink = ', activeLink);
+  console.log('inactiveLink = ', inactiveLink);
+  console.log('id = ', id);*/
+  /*const navbar = document.getElementsByTagName('nav');
 
   useEffect(() => {
     const handleScroll = () => {
@@ -17,25 +19,19 @@ console.log('href, id, path ', href, id, path)
     return () => {
       document.removeEventListener('scroll', handleScroll);
     };
-  }, [navbar,href, path]);
+  }, [navbar,href, path]);*/
 
-  const scrollTo = () => {
-    scroller.scrollTo(id, {
-      duration: 800,
-      delay: 0,
-      smooth: 'easeInOutQuart'
-    })
-  }
+  const handleSetActive = (activeId) => setActiveLink(activeId);
+  const handleSetInactive = (inactiveId) => setInactiveLink(inactiveId);
 
-  return  (
-
+  return (
     /*<a href={href} onClick={() => scrollTo()} className='flex flex-col items-center mt-7'>
       {item}
       <hr
         className={`w-3/4 border-none h-[1.5px] ${pathname.hash === href ?'bg-[#F0F0F0]' : ''}`}
       />
     </a>*/
-    <Link
+    /*<Link
       className='flex flex-col items-center mt-7 cursor-pointer'
       activeClass='underline underline-offset-8'
       to={id}
@@ -50,6 +46,38 @@ console.log('href, id, path ', href, id, path)
       <hr
         className={`w-3/4 border-none h-[1.5px] ${path === href ?'bg-[#F0F0F0]' : ''}`}
       />
+    </Link>*/
+
+    <Link
+      activeClass='active'
+      to={id}
+      spy={true}
+      smooth={true}
+      duration={500}
+      hashSpy={true}
+      onSetActive={() => handleSetActive(id)}
+      onSetInactive={() => handleSetInactive(id)}
+      /*onSetActive={() => {
+        setActiveLink(id);
+      }}*/
+      className={
+        'flex flex-col items-center mt-7 cursor-pointer' /* +
+      (activeLink === id
+        ? " underline underline-offset-8 "
+        : "")*/
+      }
+    >
+      {item}
+      {activeLink === id ? (
+        <hr className='w-3/4 border-none h-[1.5px] bg-[#F0F0F0]' />
+      ) : (
+        ''
+      )}
+      {inactiveLink === id ? (
+        <hr className='hidden w-3/4 border-none h-[1.5px] bg-[#F0F0F0]' />
+      ) : (
+        ''
+      )}
     </Link>
   );
 };
