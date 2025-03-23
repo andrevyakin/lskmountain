@@ -1,8 +1,8 @@
-import Hero from './layouts/Hero.jsx';
-import Navbar from './pages/Navbar.jsx';
-import Products from './layouts/Products.jsx';
-import History from './layouts/History.jsx';
-import Contacts from './layouts/Contacts.jsx';
+import Hero from './pages/Hero.jsx';
+import Navbar from './components/Navbar.jsx';
+import Products from './pages/Products.jsx';
+import History from './pages/History.jsx';
+import Contacts from './pages/Contacts.jsx';
 
 const App = () => {
   return (

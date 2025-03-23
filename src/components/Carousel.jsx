@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { certificates as slides } from '../assets/certificates';
+import { certificates as slides } from '../assets/certificates/index.js';
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
 
 const Carousel = () => {

@@ -2,12 +2,24 @@
 
 @import "tailwindcss";
 
-/** {
-    scroll-behavior: smooth
-}*/
-
 @theme {
     --font-prata: "Prata", "sans-serif";
     --breakpoint-3xl: 105rem;
     --breakpoint-4xl: 121rem;
+}
+
+.animation-hover:after {
+    background: none repeat scroll 0 0 transparent;
+    content: "";
+    height: 2px;
+    transition: width 0.3s ease 0s, left 0.3s ease 0s;
+    @apply w-0 bg-[#f0f0f0] left-1/2 block -bottom-1 absolute;
+}
+
+.animation-active:after {
+    @apply left-0 w-full;
+}
+
+.animation-hover:hover:after {
+    @apply left-0 w-full;
 }
