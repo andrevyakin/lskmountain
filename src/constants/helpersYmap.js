@@ -17,15 +17,17 @@ export const features = {
       ],
     ],
   },
+  properties: {
+    hint: {
+      title: 'Title of that pop up',
+      text: 'Some useful information about a place. You can add whatever you want: pictures, buttons, different headings.'
+    }
+  },
   style: {
     simplificationRate: 0,
-    stroke: [
-      {color: 'rgba(25, 109, 255, 0.6)', width: 14},
-      {color: '#196DFF', width: 4, dash: [13]},
-      {color: '#FFFFFF', width: 8}
-    ],
+    stroke: [{ color: '#242424', dash: [8, 8], width: 4 }],
     fill: 'rgba(25, 109, 255, 0.6)'
-  }
+  },
 };
 
 export const location = {

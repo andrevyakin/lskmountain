@@ -1,43 +1,48 @@
 import Carousel from '../components/Carousel.jsx';
 import Skill from '../components/Skill.jsx';
 import { experience, skill, wagon } from '../assets/index.js';
+import {
+  YMap,
+  YMapComponentsProvider,
+  YMapDefaultFeaturesLayer,
+  YMapDefaultMarker,
+  YMapDefaultSchemeLayer,
+  YMapFeature,
+  YMapHint,
+} from 'ymap3-components';
+import { features, location } from '../constants/helpersYmap.js';
+import { aboutCompany } from '../constants/aboutСompany.js';
 
 const History = () => {
   return (
     <>
       <div
-        id='about'
+        id='contacts'
         className='bg-[url(/bg_products.png)] bg-no-repeat bg-cover bg-[#242424] opacity-70 contrast-125 brightness-110'
       >
         <div className='mx-16 pt-8 pb-8 border-x border-[#242424]'>
           <section className=''>
             <div className='flex'>
-              <div className='basis-[44%]'>
+              <div className='basis-[40%]'>
                 <Carousel />
               </div>
-              <div className='basis-[56%] text-2xl px-12 pt-12'>
-                Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-                Adipisci aliquid asperiores at blanditiis consectetur cum
-                dignissimos distinctio, dolore dolorum enim, et facere incidunt
-                iste laboriosam laudantium molestiae nulla officiis perspiciatis
-                quaerat, quo reiciendis rem sed similique suscipit ut vitae
-                voluptate voluptatibus. Adipisci aliquid animi assumenda debitis
-                eligendi eum, hic illum labore modi natus non provident, quae
-                ratione reiciendis rem repellendus veritatis! Accusantium
-                architecto consequuntur distinctio earum, fugiat nobis quibusdam
-                ratione sint velit? Accusantium error laboriosam molestiae nam
-                pariatur. Consectetur cum, cumque debitis esse fugiat, id
-                maiores nemo possimus, qui reprehenderit tempore unde velit
-                voluptatem? Mollitia, perspiciatis possimus recusandae sint
-                suscipit voluptatem! Fugiat libero provident voluptatem! Harum
-                incidunt ipsam nihil quas. Ad adipisci alias animi fugit maxime,
-                molestias numquam saepe voluptatibus.
+
+              <div className='basis-[60%] px-12'>
+                <h1 className='font-prata text-6xl text-center mb-8'>О нас</h1>
+                {aboutCompany.map((item, index) =>
+                  <div
+                  key={index}
+                  className='text-2xl indent-20 '
+                  >
+                    {item}
+                  </div>
+                )}
               </div>
             </div>
           </section>
           <div className='font-prata mt-8 text-6xl font-medium tracking-widest uppercase text-center text-[#242424]'>
             наши преимущества
-            <div className='flex justify-evenly mt-8 px-2 2xl:px-64'>
+            <div className='flex justify-evenly mt-8'>
               <Skill
                 image={wagon}
                 alt={'ЖД'}
@@ -56,6 +61,40 @@ const History = () => {
             </div>
           </div>
         </div>
+        <section className='bg-[url(/bg_mountain.png)] bg-no-repeat bg-cover bg-[#242424] opacity-90'>
+          <div className='flex flex-wrap'>
+            <div className='w-1/2 h-60 mt-5'>
+              <YMapComponentsProvider
+                apiKey={import.meta.env.VITE_APY_KEY}
+                lang='ru_RU'
+              >
+                <YMap location={location} mode='auto'>
+                  <YMapDefaultSchemeLayer />
+                  <YMapDefaultFeaturesLayer />
+                  <YMapFeature
+                    geometry={features.geometry}
+                    style={features.style}
+                  />
+
+                  <YMapDefaultMarker
+                    coordinates={location.center}
+                    size='normal'
+                    iconName='fallback'
+                  ></YMapDefaultMarker>
+                </YMap>
+              </YMapComponentsProvider>
+            </div>
+
+            <div className='w-1/2 p-10 h-fit transition-opacity'>
+              <h1 className='font-prata text-center text-[#f0f0f0] text-6xl -mt-4 font-medium tracking-wider underline uppercase'>
+                контакты
+              </h1>
+              <p className='mt-2 font-prata text-center text-[#f0f0f0] whitespace-pre'>
+                {`+7 (959) 222 22-22\nooolsklpr@mail.ru\nЮр. адрес: ДНР, Донецк, ул. Фёдора Зайцева, 75/20\nАдрес карьера: ЛНР, с. Ковыльное, ул. Пролетарская 38`}
+              </p>
+            </div>
+          </div>
+        </section>
       </div>
     </>
   );

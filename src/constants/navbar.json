@@ -10,11 +10,6 @@
     "href": "#products"
   },
   {
-    "_id": "about",
-    "item": "О нас",
-    "href": "#about"
-  },
-  {
     "_id": "contacts",
     "item": "Контакты",
     "href": "#contacts"

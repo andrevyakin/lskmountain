@@ -5,7 +5,7 @@
 @theme {
     --font-prata: "Prata", "sans-serif";
     --breakpoint-3xl: 105rem;
-    --breakpoint-4xl: 121rem;
+    --breakpoint-4xl: 120rem;                /*1920 px*/
 }
 
 .animation-hover:after {
