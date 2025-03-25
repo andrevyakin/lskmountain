@@ -17,12 +17,6 @@ export const features = {
       ],
     ],
   },
-  properties: {
-    hint: {
-      title: 'Title of that pop up',
-      text: 'Some useful information about a place. You can add whatever you want: pictures, buttons, different headings.'
-    }
-  },
   style: {
     simplificationRate: 0,
     stroke: [{ color: '#242424', dash: [8, 8], width: 4 }],
@@ -33,4 +27,19 @@ export const features = {
 export const location = {
   center: [38.817179, 48.284219], //центр карты
   zoom: 14, //зум от 0 до 19
+};
+
+/* An array of props for markers.
+`properties.hint` stores the text that will be displayed when hovering over this marker */
+export const MARKER_PROPS = {
+  coordinates: [38.817179, 48.284219],
+  size: 'normal',
+  iconName: 'fallback',
+  color: '#242424',
+  properties: {
+    hint: {
+      title: 'Карьер ЛСК',
+      text: 'п. Ковыльное, ул. Пролетарская, 38'
+    }
+  }
 };
