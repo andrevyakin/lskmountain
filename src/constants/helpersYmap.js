@@ -39,7 +39,8 @@ export const MARKER_PROPS = {
   properties: {
     hint: {
       title: 'Карьер ЛСК',
-      text: 'п. Ковыльное, ул. Пролетарская, 38'
+      text: 'п. Ковыльное, ул. Пролетарская, 38',
+      coordinates: 'Ш:48.284219, Д:38.817179'
     }
   }
 };
