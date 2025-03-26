@@ -23,7 +23,7 @@ const Navbar = () => {
     <>
       <div className='relative'>
         <div
-          className={`fixed top-0 left-0 right-0 z-10 bg-[url(/bg_mountain.png)] bg-[#242424] text-[#F0F0F0] brightness-150`}
+          className={`fixed top-0 left-0 right-0 z-10 bg-[#323232] text-[#F0F0F0] brightness-150`}
         >
           <nav
             ref={refNav}
@@ -54,8 +54,8 @@ const Navbar = () => {
                 className={
                   'flex items-center mt-7 cursor-pointer animation-hover relative' +
                   (activeLink === i._id
-                    ? ' text-gray-500 animation-active '
-                    : ' text-[#f0f0f0] hover:text-gray-500')
+                    ? ' text-[#f0f0f0] animation-active '
+                    : ' text-[#f0f0f0] hover:text-text-[#242424]')
                 }
               >
                 {i.item}

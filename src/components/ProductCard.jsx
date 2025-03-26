@@ -21,7 +21,7 @@ const ProductCard = ({
             className='object-cover h-max-[294px] w-max-[258px] rounded-2xl'
           />
         </div>
-        <div className='flex flex-col pt-6 font-prata text-sm text-start normal-case text-[#242424]'>
+        <div className='flex flex-col pt-6 font-philosopher text-sm text-start normal-case text-[#242424]'>
           {strength && <div>Марка прочности: {strength}</div>}
           {frost && <div>Морозостойкость: {frost}</div>}
           {greediness && <div>Лещадность; {greediness}</div>}

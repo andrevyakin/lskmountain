@@ -8,7 +8,7 @@ const Products = () => {
   return (
     <section
       id='products'
-      className='bg-[url(/bg_products.png)] bg-no-repeat bg-cover bg-[#242424] opacity-70 contrast-125 brightness-110'
+      className=''
     >
       <div className='mx-16 pt-12 pb-8 border-x border-[#242424]'>
         {category.map((category) => (

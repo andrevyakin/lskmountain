@@ -38,7 +38,7 @@ export const MARKER_PROPS = {
   color: '#242424',
   properties: {
     hint: {
-      title: 'Карьер ЛСК',
+      title: 'Петровеньковское месторождение',
       text: 'п. Ковыльное, ул. Пролетарская, 38',
       coordinates: 'Ш:48.284219, Д:38.817179'
     }

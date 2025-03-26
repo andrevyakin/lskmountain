@@ -1,9 +1,11 @@
 @import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Prata&display=swap');
 
 @import "tailwindcss";
 
 @theme {
     --font-prata: "Prata", "sans-serif";
+    --font-philosopher: "Philosopher", "sans-serif";
     --breakpoint-3xl: 105rem;
     --breakpoint-4xl: 120rem;                /*1920 px*/
 }
