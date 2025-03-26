@@ -6,24 +6,19 @@ import { VscMail } from "react-icons/vsc";
 import navbar from '../constants/navbar.json';
 
 
-const Navbar = () => {
+const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
-  /*const [isBottom, setIsBottom] = useState(false);*/
   const [heightNav, setHeightNav] = useState(0);
-
   const refNav = useRef(null);
-
   useEffect(() => {
     setHeightNav(refNav.current.clientHeight * -1);
   }, [heightNav, refNav]);
 
-
-
   return (
     <>
-      <div className='relative'>
+      <header className=''>
         <div
-          className={`fixed top-0 left-0 right-0 z-10 bg-[#323232] text-[#F0F0F0] brightness-150`}
+          className={`fixed top-0 w-full z-10 bg-[#323232] text-[#F0F0F0]`}
         >
           <nav
             ref={refNav}
@@ -73,8 +68,8 @@ const Navbar = () => {
             </div>
           </nav>
         </div>
-      </div>
+      </header>
     </>
   );
 };
-export default Navbar;
+export default Header;
