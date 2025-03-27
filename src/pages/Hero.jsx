@@ -4,7 +4,7 @@ import PageFooter from '../components/PageFooter.jsx';
 const Hero = () => {
   return (
     <section id='hero'>
-      <div className='bg-[#242424] mx-16 border-x border-[#242424]'>
+      <div className='bg-[#242424] mx-16'>
         <div className=' bg-[url(/bg_mountain_10.png)] bg-no-repeat bg-cover backdrop-opacity-10'>
           {/*для 4-х элементов*/}
           <div className='flex flex-col justify-evenly gap-16 px-44 pt-52 pb-24 border-x border-[#F0F0F0]'>
@@ -58,7 +58,6 @@ const Hero = () => {
           </div>
         </div>
       </div>
-      <PageFooter color={'border-[#242424]'} />
     </section>
   );
 };

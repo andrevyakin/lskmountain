@@ -29,7 +29,7 @@ const Contacts = () => {
               </div>
             </div>
           </div>
-          <div className='font-prata mt-8 text-6xl font-medium tracking-widest uppercase text-center text-[#242424]'>
+          <div className='font-prata mt-8 text-5xl font-medium tracking-widest uppercase text-center text-[#242424]'>
             наши преимущества
             <motion.div
               className='flex justify-evenly mt-8'
