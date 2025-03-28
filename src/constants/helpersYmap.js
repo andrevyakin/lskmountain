@@ -19,14 +19,14 @@ export const features = {
   },
   style: {
     simplificationRate: 0,
-    stroke: [{ color: '#242424', dash: [8, 8], width: 4 }],
-    fill: 'rgba(25, 109, 255, 0.6)'
+    stroke: [{ color: '#457b9d', dash: [9, 9], width: 3 }],
+    fill: 'rgba(168, 218, 220, 0.6)'
   },
 };
 
 export const location = {
   center: [38.817179, 48.284219], //центр карты
-  zoom: 14, //зум от 0 до 19
+  zoom: 13, //зум от 0 до 19
 };
 
 /* An array of props for markers.
@@ -35,7 +35,7 @@ export const MARKER_PROPS = {
   coordinates: [38.817179, 48.284219],
   size: 'normal',
   iconName: 'fallback',
-  color: '#242424',
+  color: '#e63d2e',
   properties: {
     hint: {
       title: 'Петровеньковское месторождение',

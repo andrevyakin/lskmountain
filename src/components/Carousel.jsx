@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { certificates as slides } from '../assets/certificates/index.js';
 import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
+import { IoMdArrowDropleft, IoMdArrowDropright } from "react-icons/io";
 
 const Carousel = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
@@ -23,20 +24,20 @@ const Carousel = () => {
 
   return (
     <div className='flex flex-col px-4 pt-4 items-center h-full w-full'>
-      <div className=' w-1/2 rounded-2xl relative group flex bg-red-600'>
+      <div className=' w-1/2 relative group flex'>
         <img
           src={slides[currentIndex]}
           alt=''
-          className='w-fit h-fit rounded-2xl object-contain border-2 border-[#242424] duration-250'
+          className='w-fit h-fit object-contain border-2 border-[#242424] duration-250'
         />
         {/* Left Arrow */}
-        <MdArrowBackIos
-          className='group-hover:block absolute text-8xl -left-1/3 top-1/3 cursor-pointer'
+        <IoMdArrowDropleft
+          className='text-[#242424] group-hover:block absolute text-9xl -left-1/3 top-1/3 cursor-pointer'
           onClick={prevSlide}
         />
         {/* Right Arrow */}
-        <MdArrowForwardIos
-          className='group-hover:block absolute text-8xl -right-1/3 top-1/3 -mr-5 cursor-pointer'
+        <IoMdArrowDropright
+          className='text-[#242424] group-hover:block absolute text-9xl -right-1/3 top-1/3 cursor-pointer'
           onClick={nextSlide}
         />
       </div>

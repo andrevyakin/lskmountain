@@ -9,7 +9,7 @@ const ProductCard = ({
   stateStandard,
 }) => {
   return (
-    <div className='flex flex-col gap-1 pt-4 border boorde-[#242424] rounded-2xl bg-white drop-shadow-[0_5px_15px_rgba(0,0,0,1)]'>
+    <div className='flex flex-col gap-1 pt-4 border boorde-[#242424] rounded-2xl bg-white drop-shadow-[0_5px_5px_rgba(0,0,0,1)]'>
       <div className='font-prata text-lg uppercase font-semibold tracking-wider text-center text-[#242424]'>
         {name}
       </div>
