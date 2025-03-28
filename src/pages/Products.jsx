@@ -6,7 +6,7 @@ import PageFooter from '../components/PageFooter.jsx';
 const Products = () => {
   return (
     <section id='products' className=''>
-      <div className='mx-16 pt-12 pb-8 border-x border-[#242424]'>
+      <div className='mx-16 pt-20 pb-8 border-x border-[#242424]'>
         {category.map((category) => (
           <div key={category._id}>
             <div className='flex items-center '>
