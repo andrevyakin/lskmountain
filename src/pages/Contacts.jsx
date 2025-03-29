@@ -1,18 +1,23 @@
-import { motion } from 'framer-motion';
+import { useState, useRef } from 'react';
+import { motion, useDomEvent } from 'framer-motion';
 import Carousel from '../components/contacts/Carousel.jsx';
 import Skill from '../components/contacts/Skill.jsx';
 import { experience, skill, wagon } from '../assets/index.js';
 import { aboutCompany } from '../constants/aboutСompany.js';
 
 const Contacts = () => {
+  const [isOpen, setOpen] = useState(false);
+
+  useDomEvent(useRef(window), 'scroll', () => isOpen && setOpen(false));
+
   return (
     <>
-      <section id='contacts' className=''>
+      <section id='contacts' className='relative'>
         <div className='mx-16 pt-8 pb-8 border-x border-[#242424]'>
           <div className=''>
             <div className='flex'>
               <div className='basis-[40%]'>
-                <Carousel />
+                <Carousel isOpen={isOpen} setOpen={setOpen} />
               </div>
 
               <div className='basis-[60%] px-12'>

@@ -53,14 +53,14 @@ const Header = () => {
               </FlyoutLink>
             ))}
             <div className='flex flex-col gap-1.5'>
-              <div className='flex items-center text-xs xl:text-base 2xl:text-lg lowercase'>
+              <a href='tel:+79592222222' className='flex items-center text-xs xl:text-base 2xl:text-lg lowercase'>
                 <LiaPhoneSolid className='text-3xl' />
                 <p className='indent-2'>+7 (959) 222 22-22</p>
-              </div>
-              <div className='flex items-center text-xs xl:text-base 2xl:text-lg lowercase'>
+              </a>
+              <a href='mailto:ooolsklpr@mail.ru' className='flex items-center text-xs xl:text-base 2xl:text-lg lowercase'>
                 <VscMail className='text-3xl' />
                 <p className='indent-3'>ooolsklpr@mail.ru</p>
-              </div>
+              </a>
             </div>
           </nav>
         </div>
