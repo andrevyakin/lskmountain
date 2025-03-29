@@ -7,7 +7,7 @@ import {
   YMapFeature,
   YMapHint
 } from 'ymap3-components';
-import { features, location, MARKER_PROPS } from '../constants/helpersYmap.js';
+import { features, location, MARKER_PROPS } from '../../constants/helpersYmap.js';
 import HintWindow from './HintWindow.jsx';
 
 const YandexMap = () => {

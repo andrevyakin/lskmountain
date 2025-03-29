@@ -1,9 +1,8 @@
 import { motion } from 'framer-motion';
-import Carousel from '../components/Carousel.jsx';
-import Skill from '../components/Skill.jsx';
+import Carousel from '../components/contacts/Carousel.jsx';
+import Skill from '../components/contacts/Skill.jsx';
 import { experience, skill, wagon } from '../assets/index.js';
 import { aboutCompany } from '../constants/aboutСompany.js';
-import YandexMap from '../components/YandexMap.jsx';
 
 const Contacts = () => {
   return (

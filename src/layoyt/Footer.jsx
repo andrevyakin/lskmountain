@@ -1,5 +1,5 @@
 import React from 'react';
-import YandexMap from '../components/YandexMap.jsx';
+import YandexMap from '../components/footer/YandexMap.jsx';
 
 const Footer = () => {
   return (

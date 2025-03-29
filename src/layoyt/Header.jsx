@@ -1,10 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
-import { logoLight} from '../assets/index.js';
-import { Link, animateScroll as scroll } from 'react-scroll';
-import { LiaPhoneSolid } from "react-icons/lia";
-import { VscMail } from "react-icons/vsc";
+import { logoLight } from '../assets/index.js';
+import { animateScroll as scroll } from 'react-scroll';
+import { LiaPhoneSolid } from 'react-icons/lia';
+import { VscMail } from 'react-icons/vsc';
 import navbar from '../constants/navbar.json';
-
+import FlyoutLink from '../components/header/FlyoutLink.jsx';
+import ProductsContent from '../components/header/ProductsContent.jsx';
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
@@ -17,9 +18,7 @@ const Header = () => {
   return (
     <>
       <header className=''>
-        <div
-          className={`fixed top-0 w-full z-10 bg-[#323232] text-[#F0F0F0]`}
-        >
+        <div className={`fixed top-0 w-full z-10 bg-[#323232] text-[#F0F0F0]`}>
           <nav
             ref={refNav}
             id='navbar'
@@ -34,7 +33,7 @@ const Header = () => {
               />
             </div>
             {navbar.map((i) => (
-              <Link
+              <FlyoutLink
                 key={i.href}
                 activeClass='active'
                 to={i._id}
@@ -46,23 +45,20 @@ const Header = () => {
                 onSetActive={() => {
                   setActiveLink(i._id);
                 }}
-                className={
-                  'flex items-center mt-7 cursor-pointer animation-hover relative' +
-                  (activeLink === i._id
-                    ? ' text-[#f0f0f0] animation-active '
-                    : ' text-[#f0f0f0] hover:text-text-[#242424]')
-                }
+                activeLink={activeLink}
+                id={i._id}
+                FlyoutContent={i._id === 'products' ? ProductsContent : ''}
               >
                 {i.item}
-              </Link>
+              </FlyoutLink>
             ))}
             <div className='flex flex-col gap-1.5'>
               <div className='flex items-center text-xs xl:text-base 2xl:text-lg lowercase'>
-                <LiaPhoneSolid className='text-3xl'/>
+                <LiaPhoneSolid className='text-3xl' />
                 <p className='indent-2'>+7 (959) 222 22-22</p>
               </div>
               <div className='flex items-center text-xs xl:text-base 2xl:text-lg lowercase'>
-                <VscMail className='text-3xl'/>
+                <VscMail className='text-3xl' />
                 <p className='indent-3'>ooolsklpr@mail.ru</p>
               </div>
             </div>

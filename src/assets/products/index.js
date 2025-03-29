@@ -5,14 +5,18 @@ export const category = [
   {
     _id: 'a',
     name: 'щебень',
+    acronym: 'щебень'
   },
   {
     _id: 'b',
     name: 'щебеночно-песчаная смесь',
+    acronym: 'щпс'
+
   },
   {
     _id: 'c',
     name: 'песок из отсевов дробления',
+    acronym: 'отсев'
   },
 ];
 

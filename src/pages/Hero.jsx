@@ -1,5 +1,4 @@
 import { hero1, hero2 } from '../assets';
-import PageFooter from '../components/PageFooter.jsx';
 
 const Hero = () => {
   return (

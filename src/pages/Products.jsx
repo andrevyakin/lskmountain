@@ -1,6 +1,6 @@
 import { category, products } from '../assets/products';
 import { motion } from 'framer-motion';
-import ProductCard from '../components/ProductCard.jsx';
+import ProductCard from '../components/products/ProductCard.jsx';
 import PageFooter from '../components/PageFooter.jsx';
 
 const Products = () => {
@@ -8,7 +8,7 @@ const Products = () => {
     <section id='products' className=''>
       <div className='mx-16 pt-20 pb-8 border-x border-[#242424]'>
         {category.map((category) => (
-          <div key={category._id}>
+          <div key={category._id} id={category._id} className='pt-8'>
             <div className='flex items-center '>
               <div className='grow h-[1px] bg-[#242424]' />
               <div className='grow-0  p-3 border-1 border-[#242424] font-prata text-6xl uppercase tracking-wide font-normal  text-[#242424]'>
