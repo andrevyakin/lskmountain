@@ -30,6 +30,18 @@ const Carousel = ({ isOpen, setIsOpen }) => {
       <div className={`${isOpen ? '' : 'w-1/2 relative flex'}`}>
         <motion.img
           layout
+          initial={{
+            y: -20,
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              ease: 'easeOut',
+              duration: 2,
+            },
+          }}
           src={slides[currentIndex]}
           alt=''
           onClick={() => setIsOpen(!isOpen)}
@@ -76,7 +88,7 @@ const Carousel = ({ isOpen, setIsOpen }) => {
                 opacity: currentIndex === slideIndex ? 1 : indicatorAlpha,
               }}
             >
-              <img src={slide} alt='' className='h-20 ml-2 cursor-pointer' />
+              <img src={slide} alt='' className='h-20 ml-2 cursor-pointer'/>
             </motion.div>
           ))}
         </motion.div>
