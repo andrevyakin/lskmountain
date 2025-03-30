@@ -1,35 +1,35 @@
 import { useState, useRef } from 'react';
-import { motion, useDomEvent } from 'framer-motion';
+import { AnimateSharedLayout, motion } from 'framer-motion';
 import Carousel from '../components/contacts/Carousel.jsx';
 import Skill from '../components/contacts/Skill.jsx';
 import { experience, skill, wagon } from '../assets/index.js';
 import { aboutCompany } from '../constants/aboutСompany.js';
 
 const Contacts = () => {
-  const [isOpen, setOpen] = useState(false);
-
-  useDomEvent(useRef(window), 'scroll', () => isOpen && setOpen(false));
-
-
+  const [isOpen, setIsOpen] = useState(false);
+  const blur = 'blur-xs';
 
   return (
     <>
-      <section id='contacts' className=''
-
+      <section
+        id='contacts'
+        className={`${isOpen ? 'relative h-dvh bg-[rgba(0,0,0,0.7)]' : ''}`}
       >
         <div className='mx-16 pt-8 pb-8 border-x border-[#242424]'>
           <div className=''>
             <div className='flex'>
-              <div className='basis-[40%]'>
-                <Carousel isOpen={isOpen} setOpen={setOpen} />
-              </div>
 
-              <div className='basis-[60%] px-12'>
+                <motion.div className='basis-[40%]'>
+                  <Carousel isOpen={isOpen} setIsOpen={setIsOpen} />
+                </motion.div>
+
+
+              <div className={`basis-[60%] px-12' + ${isOpen ? blur : ''}`}>
                 <h1 className='font-prata text-6xl text-center mb-8'>О нас</h1>
                 {aboutCompany.map((item, index) => (
                   <div
                     key={index}
-                    className='font-philosopher text-2xl indent-20 '
+                    className='font-philosopher text-2xl indent-20 px-16'
                   >
                     {item}
                   </div>
@@ -37,7 +37,9 @@ const Contacts = () => {
               </div>
             </div>
           </div>
-          <div className='font-prata mt-8 text-5xl font-medium tracking-widest uppercase text-center text-[#242424]'>
+          <div
+            className={'font-prata mt-40 text-5xl font-medium tracking-widest uppercase text-center text-[#242424]' + ' ' + `${isOpen ? blur : ''}`}
+          >
             наши преимущества
             <motion.div
               className='flex justify-evenly mt-8'
