@@ -31,7 +31,7 @@ const Carousel = ({ isOpen, setIsOpen }) => {
         <motion.img
           layout
           initial={{
-            y: -20,
+            y: -30,
             opacity: 0,
           }}
           whileInView={{
@@ -42,6 +42,7 @@ const Carousel = ({ isOpen, setIsOpen }) => {
               duration: 2,
             },
           }}
+          viewport={{ once: true, amount: 0.5 }}
           src={slides[currentIndex]}
           alt=''
           onClick={() => setIsOpen(!isOpen)}
