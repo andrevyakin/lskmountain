@@ -10,9 +10,13 @@ const Contacts = () => {
 
   useDomEvent(useRef(window), 'scroll', () => isOpen && setOpen(false));
 
+
+
   return (
     <>
-      <section id='contacts' className='relative'>
+      <section id='contacts' className=''
+
+      >
         <div className='mx-16 pt-8 pb-8 border-x border-[#242424]'>
           <div className=''>
             <div className='flex'>

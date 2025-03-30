@@ -1,3 +1,4 @@
+
 export const features = {
   geometry: {
     type: 'Polygon',
@@ -25,17 +26,20 @@ export const features = {
 };
 
 export const location = {
-  center: [38.817179, 48.284219], //центр карты
+  center: [38.817179, 48.284219],  //центр карты
   zoom: 13, //зум от 0 до 19
 };
 
 /* An array of props for markers.
 `properties.hint` stores the text that will be displayed when hovering over this marker */
 export const MARKER_PROPS = {
+  /*coordinates: [38.817179, 48.284219],*/
+  /*size: 'normal',*/
+  /*iconName: 'fallback',*/
+  /*color: '#e63d2e',*/
+
   coordinates: [38.817179, 48.284219],
-  size: 'normal',
-  iconName: 'fallback',
-  color: '#e63d2e',
+
   properties: {
     hint: {
       title: 'Петровеньковское месторождение',
