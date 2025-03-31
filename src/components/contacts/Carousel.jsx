@@ -1,6 +1,5 @@
-import { useState } from 'react';
+import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 import { motion } from 'framer-motion';
-import { Link } from 'react-scroll';
 import { certificates as slides } from '../../assets/certificates/index.js';
 import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
 
@@ -28,14 +27,6 @@ const Carousel = ({ isOpen, setIsOpen }) => {
   return (
     <div className='flex flex-col px-4 pt-4 items-center h-full w-full'>
       <div className={`${isOpen ? '' : 'w-1/2 relative flex'}`}>
-       {/* <Link
-          activeClass='active'
-          to='contacts'
-          smooth={false}
-          spy={false}
-          duration={0}
-          offset={0}
-        ></Link>*/}
         <motion.img
           layout
           initial={{
@@ -55,7 +46,7 @@ const Carousel = ({ isOpen, setIsOpen }) => {
           alt=''
           onClick={() => setIsOpen(!isOpen)}
           transition={{ duration: 1 }}
-          className={`${isOpen ? 'absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[65%] z-20 cursor-zoom-out h-[calc(100%-300px)]' : 'w-fit h-fit object-contain border-2 border-[#242424] cursor-zoom-in'}`}
+          className={`${isOpen ? 'absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] z-20 cursor-zoom-out h-[calc(100%-300px)]' : 'w-fit h-fit object-contain border-2 border-[#242424] cursor-zoom-in'}`}
         />
 
         {/* Left Arrow */}
@@ -75,9 +66,9 @@ const Carousel = ({ isOpen, setIsOpen }) => {
             duration: 1,
           }}
           className={
-            'absolute bottom-0 flex pr-2 border  border-[#242424]' +
+            'absolute  flex pr-2 border  border-[#242424]' +
             ' ' +
-            `${isOpen ? 'scale-[150%] left-[50%] -translate-x-[50%] -translate-y-[180%]' : 'translate-y-[120%]'}`
+            `${isOpen ? 'hidden' : 'bottom-0 translate-y-[120%]'}`
           }
         >
           {slides.map((slide, slideIndex) => (

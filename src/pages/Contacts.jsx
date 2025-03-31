@@ -1,4 +1,4 @@
-import { useState, useRef } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Carousel from '../components/contacts/Carousel.jsx';
 import Skill from '../components/contacts/Skill.jsx';
@@ -8,20 +8,22 @@ import DisableBodyScroll from '../utils/DisableBodyScroll.js';
 
 const Contacts = () => {
   const [isOpen, setIsOpen] = useState(false);
+  const ref = useRef();
+
   const blur = 'blur-xs';
+
+  useEffect(() => {
+    if (isOpen) ref.current.scrollIntoView();
+  }, [isOpen]);
 
   return (
     <>
       <section
         id='contacts'
+        ref={ref}
         className={`${isOpen ? 'relative h-dvh bg-[rgba(0,0,0,0.7)]' : ''}`}
       >
-        {isOpen && (
-          <>
-            <a id='contacts'/>
-            <DisableBodyScroll />
-          </>
-        )}
+        {isOpen && <DisableBodyScroll />}
         <div className='mx-16 pt-32 pb-8 border-x border-[#242424]'>
           <div className=''>
             <div className='flex'>
