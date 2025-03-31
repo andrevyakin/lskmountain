@@ -12,6 +12,10 @@ const ProductsContent = ({ offset, activeLink }) => {
           to={i._id}
           className='hover:underline underline-offset-6 cursor-pointer'
           offset={offset}
+          spy={true}
+          smooth={true}
+          duration={500}
+          hashSpy={true}
         >
           {i.acronym}
         </Link>
