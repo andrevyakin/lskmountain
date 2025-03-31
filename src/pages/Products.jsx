@@ -14,7 +14,7 @@ const Products = () => {
               <div className='grow-0  p-3 border-1 border-[#242424] font-prata text-6xl uppercase tracking-wide font-normal  text-[#242424]'>
                 {category.name}
               </div>
-              <div className='grow h-[1px] bg-[#242424]'/>
+              <div className='grow h-[1px] bg-[#242424]' />
             </div>
             <motion.div
               className='flex flex-row basis-1/3 justify-evenly gap-16 flex-wrap my-16'
@@ -43,13 +43,13 @@ const Products = () => {
                     frost={product.frost}
                     greediness={product.greediness}
                     stateStandard={product.stateStandard}
+                    price={product.price}
                   />
                 ))}
             </motion.div>
           </div>
         ))}
       </div>
-      <PageFooter color={'border-[#242424]'} />
     </section>
   );
 };

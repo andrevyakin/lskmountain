@@ -4,7 +4,7 @@ import { category } from '../../assets/products/index.js';
 const ProductsContent = ({ offset, activeLink }) => {
   return (
     <div
-      className={`flex flex-col items-center gap-2 w-fit p-2 text-lg rounded-b-2xl ${activeLink === 'hero' ? 'bg-[#f0f0f0] text-[#323232] font-semibold opacity-65' : 'bg-[#323232] text-[#f0f0f0] font-normal'}`}
+      className='flex flex-col items-center gap-2 w-fit py-2 px-12 text-lg rounded-b-2xl bg-[#323232] text-[#f0f0f0] font-prata font-normal'
     >
       {category.map((i) => (
         <Link

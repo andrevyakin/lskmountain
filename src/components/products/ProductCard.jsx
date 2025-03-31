@@ -7,6 +7,7 @@ const ProductCard = ({
   frost,
   greediness,
   stateStandard,
+  price
 }) => {
   return (
     <div className='flex flex-col gap-1 pt-4 border boorde-[#242424] rounded-2xl bg-white drop-shadow-[0_5px_5px_rgba(0,0,0,1)]'>
@@ -33,6 +34,7 @@ const ProductCard = ({
               ))}
             </>
           )}
+          {price && <div className=''>Цена: {price} руб./тонна с НДС</div>}
         </div>
       </div>
     </div>

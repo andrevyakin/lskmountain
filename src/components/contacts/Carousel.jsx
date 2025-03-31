@@ -1,6 +1,6 @@
 import { useState } from 'react';
 import { motion } from 'framer-motion';
-
+import { Link } from 'react-scroll';
 import { certificates as slides } from '../../assets/certificates/index.js';
 import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
 
@@ -28,6 +28,14 @@ const Carousel = ({ isOpen, setIsOpen }) => {
   return (
     <div className='flex flex-col px-4 pt-4 items-center h-full w-full'>
       <div className={`${isOpen ? '' : 'w-1/2 relative flex'}`}>
+       {/* <Link
+          activeClass='active'
+          to='contacts'
+          smooth={false}
+          spy={false}
+          duration={0}
+          offset={0}
+        ></Link>*/}
         <motion.img
           layout
           initial={{
@@ -89,7 +97,7 @@ const Carousel = ({ isOpen, setIsOpen }) => {
                 opacity: currentIndex === slideIndex ? 1 : indicatorAlpha,
               }}
             >
-              <img src={slide} alt='' className='h-20 ml-2 cursor-pointer'/>
+              <img src={slide} alt='' className='h-20 ml-2 cursor-pointer' />
             </motion.div>
           ))}
         </motion.div>

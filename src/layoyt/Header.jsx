@@ -17,11 +17,10 @@ const Header = () => {
 
   return (
     <>
-      <header className=''>
-        <div className={`fixed top-0 w-full z-10 bg-[#323232] text-[#F0F0F0]`}>
+        <header id='navbar' className={`fixed top-0 w-full z-10 bg-[#323232] text-[#F0F0F0]`}>
           <nav
             ref={refNav}
-            id='navbar'
+
             className='flex justify-evenly items-center px-0 lg:px-28 font-prata text-xs xl:text-base 2xl:text-2xl 3xl:text-2xl uppercase tracking-wider border-b '
           >
             <div className='h-min-[50px] w-min-[135px] 2xl:h-[100px] 2xl:w-[270px] cursor-pointer'>
@@ -63,8 +62,7 @@ const Header = () => {
               </a>
             </div>
           </nav>
-        </div>
-      </header>
+        </header>
     </>
   );
 };

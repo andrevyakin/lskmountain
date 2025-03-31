@@ -1,9 +1,10 @@
 import { useState, useRef } from 'react';
-import { AnimateSharedLayout, motion } from 'framer-motion';
+import { motion } from 'framer-motion';
 import Carousel from '../components/contacts/Carousel.jsx';
 import Skill from '../components/contacts/Skill.jsx';
 import { experience, skill, wagon } from '../assets/index.js';
 import { aboutCompany } from '../constants/aboutСompany.js';
+import DisableBodyScroll from '../utils/DisableBodyScroll.js';
 
 const Contacts = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -15,14 +16,18 @@ const Contacts = () => {
         id='contacts'
         className={`${isOpen ? 'relative h-dvh bg-[rgba(0,0,0,0.7)]' : ''}`}
       >
-        <div className='mx-16 pt-8 pb-8 border-x border-[#242424]'>
+        {isOpen && (
+          <>
+            <a id='contacts'/>
+            <DisableBodyScroll />
+          </>
+        )}
+        <div className='mx-16 pt-32 pb-8 border-x border-[#242424]'>
           <div className=''>
             <div className='flex'>
-
-                <motion.div className='basis-[40%]'>
-                  <Carousel isOpen={isOpen} setIsOpen={setIsOpen} />
-                </motion.div>
-
+              <motion.div className='basis-[40%]'>
+                <Carousel isOpen={isOpen} setIsOpen={setIsOpen} />
+              </motion.div>
 
               <div className={`basis-[60%] px-12' + ${isOpen ? blur : ''}`}>
                 <h1 className='font-prata text-6xl text-center mb-8'>О нас</h1>
@@ -38,7 +43,11 @@ const Contacts = () => {
             </div>
           </div>
           <div
-            className={'font-prata mt-40 text-5xl font-medium tracking-widest uppercase text-center text-[#242424]' + ' ' + `${isOpen ? blur : ''}`}
+            className={
+              'font-prata mt-40 text-5xl font-medium tracking-widest uppercase text-center text-[#242424]' +
+              ' ' +
+              `${isOpen ? blur : ''}`
+            }
           >
             наши преимущества
             <motion.div
@@ -65,7 +74,7 @@ const Contacts = () => {
               <Skill
                 image={skill}
                 alt={'V'}
-                text={`Высокие\nпоказатели\nматериала`}
+                text={`Высокое\nкачество\nматериала`}
               />
               <Skill
                 image={experience}

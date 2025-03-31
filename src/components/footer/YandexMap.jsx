@@ -30,14 +30,14 @@ const YandexMap = () => {
         <YMapDefaultSchemeLayer />
         <YMapDefaultFeaturesLayer />
         <YMapFeature geometry={features.geometry} style={features.style} />
-        {/*<YMapHint hint={getHint}>
+        <YMapHint hint={getHint}>
           <HintWindow />
-        </YMapHint>*/}
+        </YMapHint>
         {/*<YMapDefaultMarker {...MARKER_PROPS} />*/}
 
         <YMapMarker {...MARKER_PROPS}>
-          <Marker isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />
-          {/*<HiLocationMarker className='text-6xl text-[#e63d2e] relative -top-14 -left-7 opacity-90' />*/}
+          {/*<Marker isOpen={isOpen} onClick={() => setIsOpen(!isOpen)} />*/}
+          <HiLocationMarker className='text-6xl text-[#e63d2e] relative -top-14 -left-7 opacity-100' />
           {/*<GiPositionMarker className='text-6xl text-[#e63d2e] relative -top-14 -left-7 opacity-90' />*/}
           {/*<GiStoneAxe className='text-6xl text-black bg-[#e63d2e] opacity-85 relative -top-14 -left-7 rounded-r-[50%]  rounded-tl-[50%] rotate-320  blur-[1px] ' />*/}
         </YMapMarker>
