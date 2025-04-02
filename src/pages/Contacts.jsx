@@ -8,7 +8,7 @@ import DisableBodyScroll from '../utils/DisableBodyScroll.js';
 
 const Contacts = () => {
   const [isOpen, setIsOpen] = useState(false);
-  const ref = useRef();
+  const ref = useRef(null);
 
   const blur = 'blur-xs';
 
@@ -21,7 +21,7 @@ const Contacts = () => {
       <section
         id='contacts'
         ref={ref}
-        className={`${isOpen ? 'relative h-dvh bg-[rgba(0,0,0,0.7)]' : ''}`}
+        className={`${isOpen ? ' ' : ''}`}
       >
         {isOpen && <DisableBodyScroll />}
         <div className='mx-16 pt-32 pb-8 border-x border-[#242424]'>

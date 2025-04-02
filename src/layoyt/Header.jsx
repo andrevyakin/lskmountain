@@ -17,7 +17,7 @@ const Header = () => {
 
   return (
     <>
-        <header id='navbar' className={`fixed top-0 w-full z-10 bg-[#323232] text-[#F0F0F0]`}>
+        <header className={`fixed top-0 w-full z-10 bg-[#323232] text-[#F0F0F0]`}>
           <nav
             ref={refNav}
 

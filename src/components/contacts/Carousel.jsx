@@ -1,99 +1,114 @@
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
-import { motion } from 'framer-motion';
-import { certificates as slides } from '../../assets/certificates/index.js';
-import { IoMdArrowDropleft, IoMdArrowDropright } from 'react-icons/io';
+import { useState } from 'react';
+import { AnimatePresence, motion, wrap } from 'framer-motion';
+import { certificates as images } from '../../assets/certificates/index.js';
+import { MdArrowBackIos, MdArrowForwardIos } from 'react-icons/md';
+import useWindowDimensions from '../../hook/useWindowDimensions.js';
 
 const Carousel = ({ isOpen, setIsOpen }) => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-
-  const prevSlide = () => {
-    const isFirstSlide = currentIndex === 0;
-    const newIndex = isFirstSlide ? slides.length - 1 : currentIndex - 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const nextSlide = () => {
-    const isLastSlide = currentIndex === slides.length - 1;
-    const newIndex = isLastSlide ? 0 : currentIndex + 1;
-    setCurrentIndex(newIndex);
-  };
-
-  const goToSlide = (slideIndex) => {
-    setCurrentIndex(slideIndex);
-  };
-
-  const indicatorAlpha = 0.5;
+  const [[page, direction], setPage] = useState([0, 0]);
+  const imageIndex = wrap(0, images.length, page);
+  const paginate = (newD) => setPage([page + newD, newD]);
+  const { height } = useWindowDimensions();
 
   return (
-    <div className='flex flex-col px-4 pt-4 items-center h-full w-full'>
-      <div className={`${isOpen ? '' : 'w-1/2 relative flex'}`}>
-        <motion.img
-          layout
-          initial={{
-            y: -30,
-            opacity: 0,
-          }}
-          whileInView={{
-            opacity: 1,
-            y: 0,
-            transition: {
-              ease: 'easeOut',
-              duration: 2,
-            },
-          }}
-          viewport={{ once: true, amount: 0.5 }}
-          src={slides[currentIndex]}
-          alt=''
-          onClick={() => setIsOpen(!isOpen)}
-          transition={{ duration: 1 }}
-          className={`${isOpen ? 'absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] z-20 cursor-zoom-out h-[calc(100%-300px)]' : 'w-fit h-fit object-contain border-2 border-[#242424] cursor-zoom-in'}`}
-        />
+    <>
+      <div
+        className={
+          'relative h-full flex justify-center items-center overflow-hidden' +
+          ' ' +
+          `{${isOpen ? ' -z-10' : ''}`
+        }
+      >
+        <AnimatePresence>
+          <motion.img
+            className='absolute h-full w-auto border-2 border-[#242424] cursor-zoom-in'
 
-        {/* Left Arrow */}
-        <IoMdArrowDropleft
-          className='text-[#242424] absolute text-9xl -left-1/3 top-1/3 cursor-pointer'
-          onClick={prevSlide}
+            key={page}
+            src={images[imageIndex]}
+            alt=''
+            custom={direction}
+            variants={{
+              enter: (dir) => ({ x: dir > 0 ? 500 : -500, opacity: 0 }),
+              center: { x: 0, opacity: 1 },
+              exit: (dir) => ({ x: dir < 0 ? 500 : -500, opacity: 0 }),
+            }}
+            initial='enter'
+            animate='center'
+            exit='exit'
+            transition={{
+              x: { type: 'spring', stiffness: 300, damping: 30 },
+              opacity: { duration: 0.2 },
+            }}
+            onClick={() => setIsOpen(!isOpen)}
+          />
+        </AnimatePresence>
+        <MdArrowForwardIos
+          className='absolute cursor-pointer  right-1/4 text-[#242424] text-5xl'
+          onClick={() => paginate(1)}
         />
-        {/* Right Arrow */}
-        <IoMdArrowDropright
-          className='text-[#242424] absolute text-9xl -right-1/3 top-1/3 cursor-pointer'
-          onClick={nextSlide}
+        <MdArrowBackIos
+          className='absolute cursor-pointer  left-1/4 text-[#242424] text-5xl'
+          onClick={() => paginate(-1)}
         />
-
-        <motion.div
-          layout
-          transition={{
-            duration: 1,
-          }}
-          className={
-            'absolute  flex pr-2 border  border-[#242424]' +
-            ' ' +
-            `${isOpen ? 'hidden' : 'bottom-0 translate-y-[120%]'}`
-          }
-        >
-          {slides.map((slide, slideIndex) => (
-            <motion.div
-              layout
-              key={slideIndex}
-              transition={{
-                duration: 1,
-              }}
-              onTap={() => goToSlide(slideIndex)}
-              className='cursor-pointer'
-              style={{
-                opacity: indicatorAlpha,
-              }}
-              whileTap={{ scale: 1.5 }}
-              animate={{
-                opacity: currentIndex === slideIndex ? 1 : indicatorAlpha,
-              }}
-            >
-              <img src={slide} alt='' className='h-20 ml-2 cursor-pointer' />
-            </motion.div>
-          ))}
-        </motion.div>
       </div>
-    </div>
+
+      <div
+        className={
+          'flex w-fit justify-self-center justify-center gap-3 mt-4 p-1 border  border-[#242424]' +
+          ' ' +
+          `{${isOpen ? 'opacity-70 -z-10' : ''}`
+        }
+      >
+        {images.map((_, idx) => (
+          <motion.img
+            key={idx}
+            transition={{
+              duration: 1,
+            }}
+            whileTap={{ scale: 1.5 }}
+            animate={{
+              opacity: imageIndex === idx ? 1 : 0.5,
+            }}
+            src={images[idx]}
+            alt=''
+            className={
+              'h-15  opacity-50 cursor-pointer' +
+              ' ' +
+              `{${isOpen ? 'opacity-70 -z-10' : ''}`
+            }
+            onClick={() => setPage([idx, idx > page ? 1 : -1])}
+          />
+        ))}
+      </div>
+      {isOpen && (
+        <div className='relative z-20'>
+          <motion.img
+            layout
+            initial={{
+              y: -40,
+              opacity: 0,
+            }}
+            whileInView={{
+              opacity: 1,
+              y: 0,
+              transition: {
+                ease: 'easeOut',
+                duration: 1,
+              },
+            }}
+            viewport={{ once: true, amount: 0.5 }}
+            src={images[imageIndex]}
+            alt=''
+            onClick={() => setIsOpen(!isOpen)}
+            transition={{ duration: 1 }}
+            className={`absolute left-[120%]  -translate-x-1/2 -translate-y-1/2 cursor-zoom-out`}
+            style={{
+              height: `${height - 250}px`,
+            }}
+          />
+        </div>
+      )}
+    </>
   );
 };
 export default Carousel;
