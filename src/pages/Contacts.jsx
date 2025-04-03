@@ -10,8 +10,6 @@ const Contacts = () => {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef(null);
 
-  const blur = 'blur-xs';
-
   useEffect(() => {
     if (isOpen) ref.current.scrollIntoView();
   }, [isOpen]);
@@ -21,7 +19,7 @@ const Contacts = () => {
       <section
         id='contacts'
         ref={ref}
-        className={`${isOpen ? ' ' : ''}`}
+        className=''
       >
         {isOpen && <DisableBodyScroll />}
         <div className='mx-16 pt-32 pb-8 border-x border-[#242424]'>
@@ -31,7 +29,7 @@ const Contacts = () => {
                 <Carousel isOpen={isOpen} setIsOpen={setIsOpen} />
               </motion.div>
 
-              <div className={`basis-[60%] px-12' + ${isOpen ? blur : ''}`}>
+              <div className={`basis-[60%] px-12' + ${isOpen ? 'blur-xs' : ''}`}>
                 <h1 className='font-prata text-6xl text-center mb-8'>О нас</h1>
                 {aboutCompany.map((item, index) => (
                   <div

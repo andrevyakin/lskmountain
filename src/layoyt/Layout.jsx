@@ -5,11 +5,13 @@ const Layout = ({ children }) => {
   return (
     <>
       <div id='layout' className='bg-#f0f0f0 '>
-        <div className='bg-[url(/bg_products_70.png)]  [&:nth-child(n+3)]:backdrop-opacity-70'>
-          <div id='dark'>
-            <Header />
-            {children}
-            <Footer />
+        <div className='bg-[url(/bg_products_70.png)]'>
+          <div className='bg-[rgba(255, 255, 255, 0.2)] backdrop-blur-xs'>
+            <div id='dark'>
+              <Header />
+              {children}
+              <Footer />
+            </div>
           </div>
         </div>
       </div>
