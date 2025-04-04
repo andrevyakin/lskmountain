@@ -14,7 +14,7 @@ const Carousel = ({ isOpen, setIsOpen }) => {
     <>
       <div
         className={
-          'relative h-full flex justify-center items-center overflow-hidden bg-red-600' +
+          'relative h-full flex justify-center items-center overflow-hidden' +
           ' ' +
           `{${isOpen ? ' -z-10' : ''}`
         }
