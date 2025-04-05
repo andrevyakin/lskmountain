@@ -17,7 +17,7 @@ const Contacts = () => {
   return (
     <>
       <section id='contacts' ref={ref} className='relative'>
-        {/*{isOpen && <DisableBodyScroll />}*/}
+        {isOpen && <DisableBodyScroll />}
         <div className='mx-16 pt-32 pb-8 border-x border-[#242424]'>
           <div className=''>
             <div className='flex'>

@@ -2,7 +2,7 @@ import { Component } from 'react';
 
 class DisableBodyScroll extends Component {
   componentDidMount() {
-    /*document.body.classList.add('overflow-y-hidden', 'select-none', 'pointer-events-none');*/
+    document.body.classList.add('overflow-y-hidden', 'select-none', 'pointer-events-none');
     document.getElementById('dark').classList.add('bg-[rgba(0,0,0,0.7)]');
     document.getElementsByTagName('header')[0].classList.add('blur-xs');
 
@@ -12,7 +12,7 @@ class DisableBodyScroll extends Component {
   }
 
   componentWillUnmount() {
-    /*document.body.classList.remove('overflow-y-hidden', 'select-none', 'pointer-events-none');*/
+    document.body.classList.remove('overflow-y-hidden', 'select-none', 'pointer-events-none');
     document.getElementById('dark').classList.remove('bg-[rgba(0,0,0,0.7)]');
     document.getElementsByTagName('header')[0].classList.remove('blur-xs');
 

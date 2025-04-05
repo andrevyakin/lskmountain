@@ -27,7 +27,6 @@ const Marker = ({ isOpen, onClick }) => {
       className='cursor-pointer relative h-12 w-12 rotate-313  bg-[#e63d2e] opacity-90  -top-14 -left-7 rounded-r-[50%]  rounded-tl-[50%] blur-[.5px]  '
       onClick={onClick}
     >
-      >
       <motion.div
         layout
         transition={transition}

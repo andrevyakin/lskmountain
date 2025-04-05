@@ -58,7 +58,7 @@ const Carousel = ({ isOpen, setIsOpen }) => {
           className={
             'absolute bottom-0 flex w-fit justify-self-center justify-center gap-3 mt-4 p-1 border  border-[#242424]] bg-[rgba(255,255,255,0.7)]' +
             ' ' +
-            `${isOpen ? 'opacity-30 blur-xs' : ''}`
+            `${isOpen ? 'opacity-30 blur-xs bg-transparent' : ''}`
           }
         >
           {images.map((_, idx) => (
@@ -73,7 +73,10 @@ const Carousel = ({ isOpen, setIsOpen }) => {
               }}
               src={images[idx]}
               alt=''
-              className={'h-25  opacity-30 cursor-pointer contrast-150 brightness-70'}
+              className={'h-25  opacity-50 cursor-pointer contrast-150 brightness-70' +
+                ' ' +
+                `${isOpen ? 'opacity-30 blur-xs contrast-100 brightness-100' : ''}`
+              }
               onClick={() => setPage([idx, idx > page ? 1 : -1])}
             />
           ))}
