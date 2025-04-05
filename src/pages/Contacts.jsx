@@ -16,12 +16,8 @@ const Contacts = () => {
 
   return (
     <>
-      <section
-        id='contacts'
-        ref={ref}
-        className=''
-      >
-        {isOpen && <DisableBodyScroll />}
+      <section id='contacts' ref={ref} className='relative'>
+        {/*{isOpen && <DisableBodyScroll />}*/}
         <div className='mx-16 pt-32 pb-8 border-x border-[#242424]'>
           <div className=''>
             <div className='flex'>
@@ -29,16 +25,20 @@ const Contacts = () => {
                 <Carousel isOpen={isOpen} setIsOpen={setIsOpen} />
               </motion.div>
 
-              <div className={`basis-[60%] px-12' + ${isOpen ? 'blur-xs' : ''}`}>
+              <div
+                className={`basis-[60%] px-12' + ${isOpen ? 'blur-xs' : ''}`}
+              >
                 <h1 className='font-prata text-6xl text-center mb-8'>О нас</h1>
-                {aboutCompany.map((item, index) => (
-                  <div
-                    key={index}
-                    className='font-philosopher text-2xl indent-20 px-16'
-                  >
-                    {item}
-                  </div>
-                ))}
+                <div className='max-h-[700px] overflow-auto'>
+                  {aboutCompany.map((item, index) => (
+                    <div
+                      key={index}
+                      className='font-philosopher text-2xl indent-20 px-16'
+                    >
+                      {item}
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -46,7 +46,7 @@ const Contacts = () => {
             className={
               'font-prata mt-40 text-5xl font-medium tracking-widest uppercase text-center text-[#242424]' +
               ' ' +
-              `${isOpen ? blur : ''}`
+              `${isOpen ? 'blur-xs' : ''}`
             }
           >
             наши преимущества

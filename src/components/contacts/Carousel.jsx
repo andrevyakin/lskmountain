@@ -14,99 +14,97 @@ const Carousel = ({ isOpen, setIsOpen }) => {
     <>
       <div
         className={
-          'relative h-full flex justify-center items-center overflow-hidden' +
+          'relative h-full w-[700px] max-h-[850px] min-w-[500px]  flex justify-center items-center justify-self-center overflow-hidden' +
           ' ' +
-          `{${isOpen ? ' -z-10' : ''}`
+          `${isOpen ? 'opacity-30 blur-xs' : ''}`
         }
       >
         <AnimatePresence>
-          <motion.img
-            className='absolute h-full w-auto border-2 border-[#242424] cursor-zoom-in'
+          <div className='absolute h-[calc(100%-150px)]  cursor-zoom-in'>
+            <div className='relative h-[calc(100%-50px)] top-0 border-2 border-[#242424]'>
+              <motion.img
+                className='h-full h-min-[500px] w-auto'
+                key={page}
+                src={images[imageIndex]}
+                alt=''
+                custom={direction}
+                variants={{
+                  enter: (dir) => ({ x: dir > 0 ? 500 : -500, opacity: 0 }),
+                  center: { x: 0, opacity: 1 },
+                  exit: (dir) => ({ x: dir < 0 ? 500 : -500, opacity: 0 }),
+                }}
+                initial='enter'
+                animate='center'
+                exit='exit'
+                transition={{
+                  x: { type: 'spring', stiffness: 300, damping: 30 },
+                  opacity: { duration: 0.2 },
+                }}
+                onClick={() => setIsOpen(!isOpen)}
+              />
 
-            key={page}
-            src={images[imageIndex]}
-            alt=''
-            custom={direction}
-            variants={{
-              enter: (dir) => ({ x: dir > 0 ? 500 : -500, opacity: 0 }),
-              center: { x: 0, opacity: 1 },
-              exit: (dir) => ({ x: dir < 0 ? 500 : -500, opacity: 0 }),
-            }}
-            initial='enter'
-            animate='center'
-            exit='exit'
-            transition={{
-              x: { type: 'spring', stiffness: 300, damping: 30 },
-              opacity: { duration: 0.2 },
-            }}
-            onClick={() => setIsOpen(!isOpen)}
-          />
+              <MdArrowForwardIos
+                className='absolute cursor-pointer  left-full top-1/2 translate-x-[17%] -translate-y-1/2 text-[#242424] text-5xl'
+                onClick={() => paginate(1)}
+              />
+              <MdArrowBackIos
+                className='absolute cursor-pointer  right-full top-1/2 -translate-x-[0%] -translate-y-1/2 text-[#242424] text-5xl'
+                onClick={() => paginate(-1)}
+              />
+            </div>
+          </div>
         </AnimatePresence>
-        <MdArrowForwardIos
-          className='absolute cursor-pointer  right-1/4 text-[#242424] text-5xl'
-          onClick={() => paginate(1)}
-        />
-        <MdArrowBackIos
-          className='absolute cursor-pointer  left-1/4 text-[#242424] text-5xl'
-          onClick={() => paginate(-1)}
-        />
-      </div>
-
-      <div
-        className={
-          'flex w-fit justify-self-center justify-center gap-3 mt-4 p-1 border  border-[#242424]' +
-          ' ' +
-          `{${isOpen ? 'opacity-70 -z-10' : ''}`
-        }
-      >
-        {images.map((_, idx) => (
-          <motion.img
-            key={idx}
-            transition={{
-              duration: 1,
-            }}
-            whileTap={{ scale: 1.5 }}
-            animate={{
-              opacity: imageIndex === idx ? 1 : 0.5,
-            }}
-            src={images[idx]}
-            alt=''
-            className={
-              'h-15  opacity-50 cursor-pointer' +
-              ' ' +
-              `{${isOpen ? 'opacity-70 -z-10' : ''}`
-            }
-            onClick={() => setPage([idx, idx > page ? 1 : -1])}
-          />
-        ))}
+        <div
+          className={
+            'absolute bottom-0 flex w-fit justify-self-center justify-center gap-3 mt-4 p-1 border  border-[#242424]] bg-[rgba(255,255,255,0.7)]' +
+            ' ' +
+            `${isOpen ? 'opacity-30 blur-xs' : ''}`
+          }
+        >
+          {images.map((_, idx) => (
+            <motion.img
+              key={idx}
+              transition={{
+                duration: 1,
+              }}
+              whileTap={{ scale: 1.5 }}
+              animate={{
+                opacity: imageIndex === idx ? 1 : 0.5,
+              }}
+              src={images[idx]}
+              alt=''
+              className={'h-25  opacity-30 cursor-pointer contrast-150 brightness-70'}
+              onClick={() => setPage([idx, idx > page ? 1 : -1])}
+            />
+          ))}
+        </div>
       </div>
       {isOpen && (
-        <div className='relative z-20'>
-          <motion.img
-            layout
-            initial={{
-              y: -40,
-              opacity: 0,
-            }}
-            whileInView={{
-              opacity: 1,
-              y: 0,
-              transition: {
-                ease: 'easeOut',
-                duration: 1,
-              },
-            }}
-            viewport={{ once: true, amount: 0.5 }}
-            src={images[imageIndex]}
-            alt=''
-            onClick={() => setIsOpen(!isOpen)}
-            transition={{ duration: 1 }}
-            className={`absolute left-[120%]  -translate-x-1/2 -translate-y-1/2 cursor-zoom-out`}
-            style={{
-              height: `${height - 250}px`,
-            }}
-          />
-        </div>
+        <motion.img
+          layout
+          initial={{
+            y: -40,
+            opacity: 0,
+          }}
+          whileInView={{
+            opacity: 1,
+            y: 0,
+            transition: {
+              ease: 'easeOut',
+              duration: 1,
+            },
+          }}
+          viewport={{ once: true, amount: 0.5 }}
+          src={images[imageIndex]}
+          alt=''
+          onClick={() => setIsOpen(!isOpen)}
+          transition={{ duration: 1 }}
+          className={`cursor-zoom-out pointer-events-auto  z-20 absolute left-1/2 -translate-x-1/2 -translate-y-1/2`}
+          style={{
+            height: `${height / 1.5}px`,
+            top: `${height / 2}px`,
+          }}
+        />
       )}
     </>
   );
