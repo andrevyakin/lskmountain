@@ -37,8 +37,8 @@ const Carousel = ({ isOpen, setIsOpen }) => {
                 animate='center'
                 exit='exit'
                 transition={{
-                  x: { type: 'spring', stiffness: 300, damping: 30 },
-                  opacity: { duration: 0.2 },
+                  x: { type: 'spring', stiffness: 100, damping: 10 },
+                  opacity: { duration: 0.5 },
                 }}
                 onClick={() => setIsOpen(!isOpen)}
               />
@@ -104,7 +104,7 @@ const Carousel = ({ isOpen, setIsOpen }) => {
           transition={{ duration: 1 }}
           className={`cursor-zoom-out pointer-events-auto  z-20 absolute left-1/2 -translate-x-1/2 -translate-y-1/2`}
           style={{
-            height: `${height / 1.5}px`,
+            height: `${height / 1.1}px`,
             top: `${height / 2}px`,
           }}
         />
