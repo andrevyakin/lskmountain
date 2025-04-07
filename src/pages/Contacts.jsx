@@ -28,7 +28,7 @@ const Contacts = () => {
               <div
                 className={`basis-[60%] px-12' + ${isOpen ? 'blur-xs' : ''}`}
               >
-                <h1 className='font-prata text-6xl text-center mb-8 text-shadow-lg/30'>О нас</h1>
+                <h1 className='font-prata text-6xl text-center mb-8 '>О нас</h1>
                 <div className='max-h-[700px] overflow-auto'>
                   {aboutCompany.map((item, index) => (
                     <div

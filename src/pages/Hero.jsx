@@ -5,7 +5,7 @@ const Hero = () => {
     <section id='hero'>
       <div className='bg-[#242424]  mx-16'>
         <div className=' bg-[url(/bg_mountain_10.png)] bg-no-repeat bg-cover'>
-          <div className='backdrop-blur-[2px]'>
+          <div>
             {/*для 4-х элементов*/}
             <div className='flex flex-col justify-evenly gap-16 px-44 pt-52 pb-24 border-x border-[#F0F0F0]'>
               {/*для двух верхних элементов*/}
