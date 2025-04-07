@@ -3,7 +3,7 @@ import { hero1, hero2 } from '../assets';
 const Hero = () => {
   return (
     <section id='hero'>
-      <div className='bg-[#242424]  mx-16'>
+      <div className='bg-[#242424] mx-16'>
         <div className=' bg-[url(/bg_mountain_10.png)] bg-no-repeat bg-cover'>
           <div>
             {/*для 4-х элементов*/}
