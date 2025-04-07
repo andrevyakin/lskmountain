@@ -9,6 +9,7 @@ import skill from './skill.png';
 import experience from './experience.png';
 import arrowLeft from './arrowLeft.png';
 import arrowRight from './arrowRight.png';
+import menu from './menu.png';
 
 export {
   hero1,
@@ -22,4 +23,5 @@ export {
   experience,
   arrowLeft,
   arrowRight,
+  menu
 };
