@@ -1,11 +1,12 @@
 import { useEffect, useRef, useState } from 'react';
-import { logoLight, menu } from '../assets';
+import disableScroll from 'disable-scroll';
 import { animateScroll as scroll, Link } from 'react-scroll';
+import { AnimatePresence, motion } from 'framer-motion';
+import { logoLight } from '../assets';
 import { LiaPhoneSolid } from 'react-icons/lia';
 import { VscMail } from 'react-icons/vsc';
-import { FaArrowDown } from 'react-icons/fa6';
 import { HiOutlineMenuAlt3, HiX } from 'react-icons/hi';
-import { TbTriangleInvertedFilled } from "react-icons/tb";
+import { TbTriangleInvertedFilled } from 'react-icons/tb';
 import navbar from '../constants/navbar.json';
 import FlyoutLink from '../components/header/FlyoutLink.jsx';
 import ProductsContent from '../components/header/ProductsContent.jsx';
@@ -18,6 +19,58 @@ const Header = () => {
   useEffect(() => {
     setHeightNav(refNav.current.clientHeight * -1);
   }, [heightNav, refNav]);
+  const menuVars = {
+    initial: {
+      scaleY: 0,
+    },
+    animate: {
+      scaleY: 1,
+      transition: {
+        duration: 0.5,
+        ease: [0.12, 0, 0.39, 0],
+      },
+    },
+    exit: {
+      scaleY: 0,
+      transition: {
+        duration: 0.5,
+        delay: 1,
+        ease: [0.22, 1, 0.36, 1],
+      },
+    },
+  };
+  const containerVars = {
+    initial: {
+      transition: {
+        staggerChildren: 0.09,
+        staggerDirection: -1,
+      },
+    },
+    open: {
+      transition: {
+        delayChildren: 0.3,
+        staggerChildren: 0.09,
+        staggerDirection: 1,
+      },
+    },
+  };
+
+  const mobileLinkVars = {
+    initial: {
+      y: '100px',
+      transition: {
+        duration: 0.5,
+        ease: [0.37, 0, 0.63, 1],
+      },
+    },
+   open: {
+      y: 0,
+      transition: {
+        ease: [0, 0.55, 0.45, 1],
+        duration: 0.7,
+      },
+    },
+  };
 
   return (
     <>
@@ -73,7 +126,7 @@ const Header = () => {
         </nav>
 
         {/*для мобилы*/}
-        <nav className='relative sm:hidden bg-[#1e1e1e] h-16 w-full border-b-2 border-[#f0f0f0]'>
+        <nav className='sm:hidden relative bg-[#1e1e1e] h-16 w-full border-b-2 border-[#f0f0f0]'>
           <img
             src={logoLight}
             alt='ЛСК'
@@ -82,95 +135,155 @@ const Header = () => {
           />
           {mobileNav ? (
             <HiX
-              onClick={() => setMobileNav(!mobileNav)}
+              onClick={() => {
+                setMobileNav(!mobileNav);
+                disableScroll.off();
+              }}
               className='absolute right-0 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer text-4xl'
             />
           ) : (
             <HiOutlineMenuAlt3
-              onClick={() => setMobileNav(!mobileNav)}
+              onClick={() => {
+                setMobileNav(!mobileNav);
+                disableScroll.on();
+              }}
               className='absolute right-0 top-1/2 -translate-x-1/2 -translate-y-1/2 cursor-pointer text-4xl'
             />
           )}
         </nav>
-        {mobileNav && (
-          <>
-            <div className='h-dvh bg-[#1e1e1e]'>
-              <div className='h-11/12 border-2 border-t-0 border-[#f0f0f0] bg-[url(/bg_mountain_10.png)] bg-no-repeat bg-cover bg-top mx-5 mb-5'>
-                <div className='flex flex-col items-center gap-16 pt-20'>
-                  <div className='flex flex-col gap-3'>
-                    <a
-                      href='tel:+79592222222'
-                      className='flex items-center text-xs xl:text-base 2xl:text-lg lowercase'
-                    >
-                      <div className='flex flex-col items-center'>
-                        <LiaPhoneSolid className='text-3xl' />
-                        <p className='text-2xl font-prata'>+7 (959) 222 22-22</p>
-                      </div>
-                    </a>
-                    <a
-                      href='mailto:ooolsklpr@mail.ru'
-                      className='flex items-center text-xs xl:text-base 2xl:text-lg lowercase'
-                    >
-                      <div className='flex flex-col items-center'>
-                        <VscMail className='text-3xl' />
-                        <p className='text-2xl font-prata'>ooolsklpr@mail.ru</p>
-                      </div>
-                    </a>
-                  </div>
-                  <nav className='flex flex-col items-center gap-16 text-5xl uppercase '>
-                    <Link
-                      to='hero'
-                      offset={0}
-                      onClick={() => setMobileNav(!mobileNav)}
-                      className='font-prata'
-                    >
-                      главная
-                    </Link>
-                    <div className='flex flex-col items-center gap-2 text-3xl'>
-                      <Link
-                        to='products'
-                        offset={32}
-                        onClick={() => setMobileNav(!mobileNav)}
-                        className='text-5xl'
+        <AnimatePresence>
+          {mobileNav && (
+            <motion.div
+              variants={menuVars}
+              initial='initial'
+              animate='animate'
+              exit='exit'
+              className='origin-top'
+            >
+              <div className='h-dvh bg-[#1e1e1e] origin-top'>
+                <div className='h-11/12 border-2 border-t-0 border-[#f0f0f0] bg-[url(/bg_mountain_10.png)] bg-no-repeat bg-cover bg-top mx-5 mb-5'>
+                  <motion.div
+                    variants={containerVars}
+                    initial='initial'
+                    animate='open'
+                    exit='initial'
+                    className='flex flex-col items-center gap-16 pt-20'
+                  >
+                    <div className='flex flex-col gap-3'>
+                      <a
+                        href='tel:+79592222222'
+                        className='flex items-center text-xs xl:text-base 2xl:text-lg lowercase'
                       >
-                        продукция
-                      </Link>
-                      <TbTriangleInvertedFilled />
-                      <Link
-                        to='a'
-                        offset={-32}
-                        onClick={() => setMobileNav(!mobileNav)}
+                        <motion.div variants={mobileLinkVars}>
+                          <div className='flex flex-col items-center'>
+                            <LiaPhoneSolid className='text-3xl' />
+                            <p className='text-2xl font-prata'>
+                              +7 (959) 222 22-22
+                            </p>
+                          </div>
+                        </motion.div>
+                      </a>
+                      <a
+                        href='mailto:ooolsklpr@mail.ru'
+                        className='flex items-center text-xs xl:text-base 2xl:text-lg lowercase'
                       >
-                        щебень
-                      </Link>
-                      <Link
-                        to='b'
-                        offset={-32}
-                        onClick={() => setMobileNav(!mobileNav)}
-                      >
-                        щпс
-                      </Link>
-                      <Link
-                        to='c'
-                        offset={-32}
-                        onClick={() => setMobileNav(!mobileNav)}
-                      >
-                        отсев
-                      </Link>
+                        <motion.div variants={mobileLinkVars}>
+                          <div className='flex flex-col items-center'>
+                            <VscMail className='text-3xl' />
+                            <p className='text-2xl font-prata'>
+                              ooolsklpr@mail.ru
+                            </p>
+                          </div>
+                        </motion.div>
+                      </a>
                     </div>
-                    <Link
-                      to='contacts'
-                      offset={32}
-                      onClick={() => setMobileNav(!mobileNav)}
-                    >
-                      о нас
-                    </Link>
-                  </nav>
+                    <nav className='flex flex-col items-center gap-16 text-5xl uppercase '>
+                      <motion.div variants={mobileLinkVars}>
+                        <Link
+                          to='hero'
+                          offset={0}
+                          onClick={() => {
+                            disableScroll.off();
+                            setMobileNav(!mobileNav);
+                          }}
+                          className='font-prata'
+                        >
+                          главная
+                        </Link>
+                      </motion.div>
+                      <div className='flex flex-col items-center gap-2 text-3xl'>
+                        <motion.div variants={mobileLinkVars}>
+                          <Link
+                            to='products'
+                            offset={32}
+                            onClick={() => {
+                              disableScroll.off();
+                              setMobileNav(!mobileNav);
+                            }}
+                            className='text-5xl'
+                          >
+                            продукция
+                          </Link>
+                        </motion.div>
+                        <motion.div variants={mobileLinkVars}>
+                          <TbTriangleInvertedFilled />
+                        </motion.div>
+                        <motion.div variants={mobileLinkVars}>
+                          <Link
+                            to='a'
+                            offset={-32}
+                            onClick={() => {
+                              disableScroll.off();
+                              setMobileNav(!mobileNav);
+                            }}
+                          >
+                            щебень
+                          </Link>
+                          </motion.div>
+                        <motion.div variants={mobileLinkVars}>
+                          <Link
+                            to='b'
+                            offset={-32}
+                            onClick={() => {
+                              disableScroll.off();
+                              setMobileNav(!mobileNav);
+                            }}
+                          >
+                            щпс
+                          </Link>
+                          </motion.div>
+                        <motion.div variants={mobileLinkVars}>
+                          <Link
+                            to='c'
+                            offset={-32}
+                            onClick={() => {
+                              disableScroll.off();
+                              setMobileNav(!mobileNav);
+                            }}
+                          >
+                            отсев
+                          </Link>
+                        </motion.div>
+                      </div>
+                      <motion.div variants={mobileLinkVars}>
+                        <Link
+                          to='contacts'
+                          offset={32}
+                          onClick={() => {
+                            disableScroll.off();
+                            setMobileNav(!mobileNav);
+                          }}
+                        >
+                          о нас
+                        </Link>
+                      </motion.div>
+                    </nav>
+                  </motion.div>
                 </div>
               </div>
-            </div>
-          </>
-        )}
+            </motion.div>
+          )}
+        </AnimatePresence>
       </header>
     </>
   );
