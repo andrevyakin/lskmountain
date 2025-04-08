@@ -14,7 +14,7 @@ const Carousel = ({ isOpen, setIsOpen }) => {
     <>
       <div
         className={
-          'relative h-full w-[700px] max-h-[850px] min-w-[500px]  flex justify-center items-center justify-self-center overflow-hidden' +
+          'max-sm:hidden relative h-full w-[700px] max-h-[850px] max-sm:text  flex justify-center items-center justify-self-center overflow-hidden' +
           ' ' +
           `${isOpen ? 'opacity-30 blur-xs' : ''}`
         }

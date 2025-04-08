@@ -1,12 +1,12 @@
 import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
-import Carousel from '../components/contacts/Carousel.jsx';
-import Skill from '../components/contacts/Skill.jsx';
+import Carousel from '../components/about/Carousel.jsx';
+import Skill from '../components/about/Skill.jsx';
 import { experience, skill, wagon } from '../assets/index.js';
 import { aboutCompany } from '../constants/aboutСompany.js';
 import DisableBodyScroll from '../utils/DisableBodyScroll.js';
 
-const Contacts = () => {
+const About = () => {
   const [isOpen, setIsOpen] = useState(false);
   const ref = useRef(null);
 
@@ -16,20 +16,20 @@ const Contacts = () => {
 
   return (
     <>
-      <section id='contacts' ref={ref} className='relative'>
+      <section id='contacts' ref={ref} className='md:relative'>
         {isOpen && <DisableBodyScroll />}
-        <div className='mx-16 pt-32 pb-8 border-x border-[#242424]'>
+        <div className='max-sm:mx-5 mx-16 pt-32 pb-8 border-x border-[#242424]'>
           <div className=''>
-            <div className='flex'>
-              <motion.div className='basis-[40%]'>
+            <div className='flex max-sm:flex-col-reverse'>
+              <motion.div className='md:basis-[40%]'>
                 <Carousel isOpen={isOpen} setIsOpen={setIsOpen} />
               </motion.div>
 
               <div
-                className={`basis-[60%] px-12' + ${isOpen ? 'blur-xs' : ''}`}
+                className={`md:basis-[60%] px-12' + ${isOpen ? 'blur-xs' : ''}`}
               >
                 <h1 className='font-prata text-6xl text-center mb-8 '>О нас</h1>
-                <div className='max-h-[700px] overflow-auto'>
+                <div className='max-h-[700px] max-sm:max-h-[200px] overflow-auto'>
                   {aboutCompany.map((item, index) => (
                     <div
                       key={index}
@@ -44,14 +44,14 @@ const Contacts = () => {
           </div>
           <div
             className={
-              'font-prata mt-40 text-5xl font-medium tracking-widest uppercase text-center text-[#242424]' +
+              'font-prata mt-40 text-5xl max-sm:text-3xl font-medium tracking-widest uppercase text-center text-[#242424]' +
               ' ' +
               `${isOpen ? 'blur-xs' : ''}`
             }
           >
             наши преимущества
             <motion.div
-              className='flex justify-evenly mt-8'
+              className='max-sm:flex-col max-sm:gap-8 flex justify-evenly mt-8'
               initial={{
                 y: 50,
                 opacity: 0,
@@ -88,4 +88,4 @@ const Contacts = () => {
     </>
   );
 };
-export default Contacts;
+export default About;

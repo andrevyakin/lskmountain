@@ -6,12 +6,12 @@ import PageFooter from '../components/PageFooter.jsx';
 const Products = () => {
   return (
     <section id='products' className=''>
-      <div className='mx-16 pt-20 pb-8 border-x border-[#242424]'>
+      <div className='max-sm:mx-5 mx-16 pt-20 pb-8 border-x border-[#242424]'>
         {category.map((category) => (
           <div key={category._id} id={category._id} className='pt-8'>
             <div className='flex items-center '>
               <div className='grow h-[1px] bg-[#242424]' />
-              <div className='grow-0  p-3 border-1 border-[#242424] font-prata text-6xl uppercase tracking-wide font-normal  text-[#242424]'>
+              <div className='grow-0  p-3 border-1 border-[#242424] font-prata text-6xl max-sm:text-3xl max-sm:text-center uppercase tracking-wide font-normal  text-[#242424]'>
                 {category.name}
               </div>
               <div className='grow h-[1px] bg-[#242424]' />
