@@ -17,6 +17,7 @@ const About = () => {
   return (
     <>
       <section id='contacts' ref={ref} className='md:relative'>
+        <h2 className='hidden'>О компании ООО "ЛСК"</h2>
         {isOpen && <DisableBodyScroll />}
         <div className='max-sm:mx-5 mx-16 pt-32 pb-8 border-x border-[#242424]'>
           <div className=''>

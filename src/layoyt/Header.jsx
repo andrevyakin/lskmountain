@@ -13,13 +13,13 @@ import ProductsContent from '../components/header/ProductsContent.jsx';
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
-  const [mobileNav, setMobileNav] = useState(false);
+  /*const [mobileNav, setMobileNav] = useState(false);*/
   const [heightNav, setHeightNav] = useState(0);
   const refNav = useRef(null);
   useEffect(() => {
     setHeightNav(refNav.current.clientHeight * -1);
   }, [heightNav, refNav]);
-  const menuVars = {
+ /* const menuVars = {
     initial: {
       scaleY: 0
     },
@@ -70,7 +70,7 @@ const Header = () => {
         duration: 0.3
       }
     }
-  };
+  };*/
 
   return (
     <>
@@ -79,7 +79,7 @@ const Header = () => {
       >
         <nav
           ref={refNav}
-          className="max-sm:hidden flex justify-evenly items-center px-0 lg:px-28 font-prata text-xs xl:text-base 2xl:text-2xl 3xl:text-2xl uppercase tracking-wider border-b "
+          className="flex justify-evenly items-center px-0 lg:px-28 font-prata text-xs xl:text-base 2xl:text-2xl 3xl:text-2xl uppercase tracking-wider border-b "
         >
           <div className="h-min-[50px] w-min-[135px] 2xl:h-[100px] 2xl:w-[270px] cursor-pointer">
             <img
@@ -128,7 +128,7 @@ const Header = () => {
         </nav>
 
         {/*для мобилы*/}
-        <div className="sm:hidden h-dvh">
+       {/* <div className="sm:hidden h-dvh">
           <nav className="relative bg-[#242424] h-16 w-full border-b-2 border-[#f0f0f0]">
             <img
               src={logoLight}
@@ -290,7 +290,7 @@ const Header = () => {
               </motion.div>
             )}
           </AnimatePresence>
-        </div>
+        </div>*/}
       </header>
     </>
   );
