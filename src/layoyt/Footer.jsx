@@ -23,7 +23,7 @@ const Footer = () => {
             </div>
 
             <div className='w-1/2 max-sm:w-full h-fit max-sm:h-1/2 justify-items-center mt-4 py-4'  ref={ref}>
-              <div className='max-sm:text-5xl border-b-[2px] w-fit font-prata text-center text-[#f0f0f0] text-7xl font-medium tracking-wider uppercase'>
+              <div className='max-sm:text-5xl border-b-[2px] font-prata text-center text-[#f0f0f0] text-7xl font-medium tracking-wider uppercase'>
                 контакты
               </div>
               <p className='mt-10 max-sm:mt-6 font-philosopher text-center text-[#f0f0f0] whitespace-pre text-2xl max-sm:text-sm'>

@@ -52,7 +52,7 @@ const About = () => {
           >
             наши преимущества
             <motion.div
-              className='max-sm:flex-col max-sm:gap-8 flex justify-evenly mt-8'
+              className='max-sm:flex-col max-sm:gap-y-8 flex justify-evenly mt-8'
               initial={{
                 y: 50,
                 opacity: 0,
