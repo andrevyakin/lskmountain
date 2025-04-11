@@ -7,7 +7,7 @@ const Products = () => {
   return (
     <section id='products' className=''>
       <h2 className='hidden'>Продукция ООО "ЛСК"</h2>
-      <div className='max-sm:mx-5 mx-16 pt-20 pb-8 border-x border-[#242424]'>
+      <div className='max-sm:mx-5 mx-16 max-sm:pt-4 pt-20 pb-8 border-x border-[#242424]'>
         {category.map((category) => (
           <div key={category._id} id={category._id} className='pt-8'>
             <div className='flex items-center '>
@@ -50,8 +50,20 @@ const Products = () => {
                   />
                 ))}
             </motion.div>
-            <div
+            <motion.div
               className='md:hidden flex flex-row basis-1/3 justify-evenly gap-16 flex-wrap my-16'
+              initial={{
+                x: 0,
+                opacity: 0,
+              }}
+              whileInView={{
+                x: 0,
+                opacity: 1,
+                transition: {
+                  duration: 2,
+                },
+              }}
+              viewport={{ once: true, amount: 0 }}
             >
               {products
                 .filter((product) => product._id.includes(category._id))
@@ -67,7 +79,7 @@ const Products = () => {
                     price={product.price}
                   />
                 ))}
-            </div>
+            </motion.div>
           </div>
         ))}
       </div>
