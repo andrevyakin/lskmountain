@@ -1,5 +1,4 @@
 import { hero1, hero2 } from '../assets';
-import { useEffect, useLayoutEffect, useRef, useState } from 'react';
 
 const Hero = () => {
   return (

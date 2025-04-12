@@ -1,7 +1,21 @@
-@import url('https://fonts.googleapis.com/css2?family=Prata&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Philosopher:ital,wght@0,400;0,700;1,400;1,700&family=Prata&display=swap');
-
 @import "tailwindcss";
+
+@font-face {
+    font-family: 'Prata';
+    src: url('./assets/fonts/Prata-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
+@font-face {
+    font-family: 'Philosopher';
+    src: url('./assets/fonts/Philosopher-Regular.woff2') format('woff2');
+    font-weight: normal;
+    font-style: normal;
+    font-display: swap;
+}
+
 
 @theme {
     --font-prata: "Prata", "sans-serif";

@@ -33,7 +33,7 @@ const About = () => {
         <div className='max-sm:mx-5 mx-16 pt-32 max-sm:pt-0 pb-8 border-x border-[#242424]'>
           <div className=''>
             <div className='flex max-sm:flex-col-reverse'>
-              <motion.div className='md:basis-[40%]'>
+              <motion.div className='max-sm:hidden basis-[40%]'>
                 <Carousel isOpen={isOpen} setIsOpen={setIsOpen} />
               </motion.div>
               <div className='md:hidden w-full mt-10 grid place-items-center'>

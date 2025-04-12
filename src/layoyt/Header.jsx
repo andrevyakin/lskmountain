@@ -75,7 +75,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 w-full z-10 text-[#F0F0F0] sm:bg-[#242424] `}
+        className={`fixed top-0 left-0 right-0 z-10 text-[#F0F0F0] sm:bg-[#242424] `}
       >
         <nav
           ref={refNav}
@@ -129,7 +129,7 @@ const Header = () => {
 
         {/*для мобилы*/}
         <div className='sm:hidden relative top-0 bottom-0'>
-          <nav className='relative bg-[#242424] h-16 w-full border-b-2 border-[#f0f0f0]'>
+          <nav className='relative bg-[#242424] h-16 border-b-2 border-[#f0f0f0]'>
             <img
               src={logoLight}
               alt='ЛСК'
