@@ -5,6 +5,9 @@ import Skill from '../components/about/Skill.jsx';
 import { experience, skill, wagon } from '../assets/index.js';
 import { aboutCompany } from '../constants/aboutСompany.js';
 import DisableBodyScroll from '../utils/DisableBodyScroll.js';
+import Cards from '../components/about/SwipeCards.jsx';
+import { certificates as images } from '../assets/certificates/index.js';
+import SwipeCards from '../components/about/SwipeCards.jsx';
 
 const About = () => {
   const [isOpen, setIsOpen] = useState(false);
@@ -14,6 +17,12 @@ const About = () => {
     if (isOpen) ref.current.scrollIntoView();
   }, [isOpen]);
 
+  const cardData = images.map((image, index) => ({
+    id: index + 1,
+    url: image,
+  }));
+  const [cards, setCards] = useState(cardData.reverse());
+
   return (
     <>
       <section id='contacts' ref={ref} className='md:relative'>
@@ -22,11 +31,21 @@ const About = () => {
         <div className='max-sm:mx-5 mx-16 pt-32 max-sm:pt-0 pb-8 border-x border-[#242424]'>
           <div className=''>
             <div className='flex max-sm:flex-col-reverse'>
-              <motion.div className='md:basis-[40%]'>
+               <motion.div className='md:basis-[40%]'>
                 <Carousel isOpen={isOpen} setIsOpen={setIsOpen} />
               </motion.div>
+              <div className='md:hidden w-full mt-10 grid place-items-center'>
+                {cards.map((card) => (
+                  <SwipeCards
+                    key={card.id}
+                    cards={cards}
+                    setCards={setCards}
+                    {...card}
+                  />
+                ))}
+              </div>
 
-              <div
+               <div
                 className={`md:basis-[60%] px-12' + ${isOpen ? 'blur-xs' : ''}`}
               >
                 <h1 className='font-prata text-6xl text-center mb-8'>О нас</h1>
