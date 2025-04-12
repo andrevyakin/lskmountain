@@ -5,7 +5,6 @@ import Skill from '../components/about/Skill.jsx';
 import { experience, skill, wagon } from '../assets/index.js';
 import { aboutCompany } from '../constants/aboutСompany.js';
 import DisableBodyScroll from '../utils/DisableBodyScroll.js';
-import Cards from '../components/about/SwipeCards.jsx';
 import { certificates as images } from '../assets/certificates/index.js';
 import SwipeCards from '../components/about/SwipeCards.jsx';
 
@@ -22,16 +21,19 @@ const About = () => {
     url: image,
   }));
   const [cards, setCards] = useState(cardData.reverse());
+  useEffect(() => {
+    if (!cards.length) setCards(cardData);
+  }, [cards]);
 
   return (
     <>
-      <section id='contacts' ref={ref} className='md:relative'>
+      <section id='contacts' ref={ref} className='relative'>
         <h2 className='hidden'>О компании ООО "ЛСК"</h2>
         {isOpen && <DisableBodyScroll />}
         <div className='max-sm:mx-5 mx-16 pt-32 max-sm:pt-0 pb-8 border-x border-[#242424]'>
           <div className=''>
             <div className='flex max-sm:flex-col-reverse'>
-               <motion.div className='md:basis-[40%]'>
+              <motion.div className='md:basis-[40%]'>
                 <Carousel isOpen={isOpen} setIsOpen={setIsOpen} />
               </motion.div>
               <div className='md:hidden w-full mt-10 grid place-items-center'>
@@ -40,16 +42,18 @@ const About = () => {
                     key={card.id}
                     cards={cards}
                     setCards={setCards}
+                    isOpen={isOpen}
+                    setIsOpen={setIsOpen}
                     {...card}
                   />
                 ))}
               </div>
 
-               <div
+              <div
                 className={`md:basis-[60%] px-12' + ${isOpen ? 'blur-xs' : ''}`}
               >
                 <h1 className='font-prata text-6xl text-center mb-8'>О нас</h1>
-                <div className='max-h-[700px] max-sm:max-h-[350px] overflow-auto'>
+                <div className='max-h-[700px] max-sm:max-h-[350px] overflow-y-auto'>
                   {aboutCompany.map((item, index) => (
                     <div
                       key={index}
