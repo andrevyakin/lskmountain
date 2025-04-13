@@ -1,70 +1,68 @@
 import { hero1, hero2 } from '../assets';
+import Wrapper from '../components/Hero/Wrapper.jsx';
 
 const Hero = () => {
   return (
     <section id='hero'>
-      <h2 className='hidden'>Главное ООО "ЛСК"</h2>
-      <div className='bg-[#242424] max-sm:mx-5 mx-16'>
+      <h2 className='hidden'>Слоганы и фотографии завода</h2>
+      <div className='bg-dark mx-5 lg:mx-15'>
         <div className=' bg-[url(/bg_mountain_10.png)] bg-no-repeat bg-cover'>
           <div className='bg-[rgba(0,0,0,.25)]'>
-            {/*для 4-х элементов*/}
-            <div
-              className='flex flex-col justify-evenly gap-16 max-sm:gap-4 max-sm:px-5 px-44 max-sm:pt-20 pt-52 max-sm:pb-16 pb-24 border-x border-[#242424]'>
-              {/*для двух верхних элементов*/}
-              <div className='max-sm:flex-col max-sm:h-80 flex justify-center'>
-                {/*верхний левый элемент*/}
-                <div className='flex-1 content-center justify-items-center border border-[#F0F0F0]'>
-                  <div className='flex flex-col gap-6 w-fit'>
-                    <h3
-                      className='font-prata uppercase text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl text-[#F0F0F0]'>
-                      щебень, щпс, отсев
-                    </h3>
-                    <div className='flex items-center gap-2'>
-                      <p className='min-w-16 md:w-11 h-[1px] bg-[#BABABA]'></p>
-                      <p
-                        className='font-philosopher uppercase text-base xl:text-lg 2xl:text-xl 3xl:text-2xl text-[#F0F0F0]'>
-                        от производителя
-                      </p>
-                    </div>
+            <ul
+              className='flex flex-wrap justify-center flex-row xl:flex-col
+               gap-y-6 sm:gap-y-12 xl:gap-y-14 2xl:gap-y-20
+               pt-20 sm:pt-36 xl:pt-36 2xl:pt-44
+               px-5 md:px-10 lg:px-16 2xl:px-36
+               pb-12 sm:pb-16 xl:pb-14 2xl:pb-20'
+            >
+              <li className='flex flex-col sm:flex-row'>
+                <Wrapper>
+                  <div className='flex flex-col gap-4 font-prata uppercase text-light text-[clamp(20px,2.5vw,48px)]'>
+                    <h3 className=''>щебень, щпс, отсев</h3>
+                    <h4 className='relative translate-x-1/12 text-center tracking-wide font-philosopher text-[clamp(16px,2.03vw,39px)]'>
+                      <span className='absolute left-0 top-1/2 -translate-x-1/3 w-12 md:w-14 lg:w-17 xl:w-23 2xl:w-28 3xl:w-32 h-[1px] bg-light' />
+                      от производителя
+                    </h4>
                   </div>
-                </div>
-
-                {/*верхний правый элемент*/}
-                <div className='flex-1 border border-[#F0F0F0]'>
+                </Wrapper>
+                <Wrapper>
                   <img
                     src={hero1}
-                    alt='Фото1'
+                    alt='Фотография механизма, перерабатывающего (дробящего) камень.'
                     height='328'
                     width='726'
-                    className='object-cover w-full h-auto max-sm:w-auto max-sm:h-full'
+                    className='object-fill h-full w-full'
                   />
-                </div>
-              </div>
-
-              {/*для двух нижних элементов*/}
-              <div className='max-sm:flex-col-reverse max-sm:h-80 flex justify-center'>
-                {/*нижний левый элемент*/}
-                <div className='flex-1 border border-[#F0F0F0]'>
+                </Wrapper>
+              </li>
+              <li className='flex flex-col-reverse sm:flex-row'>
+                <Wrapper>
                   <img
                     src={hero2}
-                    alt=' Фото2'
+                    alt='Фотография механизма, перерабатывающего (дробящего) камень.'
                     height='328'
                     width='726'
-                    className='object-cover w-full h-auto max-sm:w-auto max-sm:h-full'
+                    className='object-fill h-full w-full'
                   />
-                </div>
-
-                {/*нижний правый элемент*/}
-                <div className='flex-1 content-center justify-items-center border border-[#F0F0F0]'>
-                  <div
-                    className='flex flex-col gap-3 w-fit font-prata uppercase text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl text-[#F0F0F0]'>
-                    <p>петровеньковское</p>
-                    <p>месторождение</p>
-                    <p>песчаника</p>
-                  </div>
-                </div>
-              </div>
-            </div>
+                </Wrapper>
+                <Wrapper>
+                  <h3
+                    className='font-prata uppercase text-light
+                  text-[clamp(20px,2.5vw,48px)]/10
+                  sm:text-[clamp(20px,2.5vw,48px)]/8
+                  lg:text-[clamp(20px,2.5vw,48px)]/12
+                  xl:text-[clamp(20px,2.5vw,48px)]/16
+                  2xl:text-[clamp(20px,2.5vw,48px)]/20'
+                  >
+                    петровеньковское
+                    <br />
+                    месторождение
+                    <br />
+                    песчаника
+                  </h3>
+                </Wrapper>
+              </li>
+            </ul>
           </div>
         </div>
       </div>

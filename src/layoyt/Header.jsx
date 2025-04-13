@@ -75,7 +75,7 @@ const Header = () => {
   return (
     <>
       <header
-        className={`fixed top-0 left-0 right-0 z-10 text-[#F0F0F0] sm:bg-[#242424] `}
+        className={`fixed top-0 left-0 right-0 z-10 text-light sm:bg-dark `}
       >
         <nav
           ref={refNav}

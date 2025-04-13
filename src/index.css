@@ -20,8 +20,10 @@
 @theme {
     --font-prata: "Prata", "sans-serif";
     --font-philosopher: "Philosopher", "sans-serif";
-    --breakpoint-3xl: 105rem;
-    --breakpoint-4xl: 120rem;                /*1920 px*/
+    --color-dark: #242424;
+    --color-light: #f0f0f0;
+    --breakpoint-3xl: 120rem;
+    --breakpoint-4xl: 150rem;
 }
 
 .animation-hover:after {

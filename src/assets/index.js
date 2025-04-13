@@ -1,5 +1,5 @@
-import hero1 from './hero-1.png';
-import hero2 from './hero-2.png';
+import hero1 from './hero-1.jpg';
+import hero2 from './hero-2.jpg';
 import logoLight from './logo.png';
 import logoLetter from './lskNoBg.png';
 import mailLight from './mail.png';
