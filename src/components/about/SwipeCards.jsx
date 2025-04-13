@@ -32,7 +32,7 @@ const SwipeCards = ({ id, url, setCards, cards, setIsOpen, isOpen }) => {
         src={url}
         alt=''
         className={
-          'h-52 w-auto origin-bottom object-cover hover:cursor-grab active:cursor-grabbing' +
+          'h-80 lg:h-130 w-auto origin-bottom object-cover hover:cursor-grab active:cursor-grabbing' +
           ' ' +
           `${isOpen ? 'opacity-30 blur-xs' : ''}`
         }

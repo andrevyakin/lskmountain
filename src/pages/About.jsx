@@ -68,7 +68,7 @@ const About = () => {
           </div>
           <div
             className={
-              'font-prata mt-40 max-sm:mt-20 text-5xl max-sm:text-3xl font-medium tracking-widest uppercase text-center text-[#242424]' +
+              'font-prata mt-40 max-sm:mt-20 text-5xl max-sm:text-3xl font-medium tracking-widest uppercase text-center text-dark' +
               ' ' +
               `${isOpen ? 'blur-xs' : ''}`
             }
