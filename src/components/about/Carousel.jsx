@@ -88,7 +88,12 @@ const Carousel = ({ isOpen, setIsOpen }) => {
       </div>
       {isOpen && (
         <>
-          <div className='absolute z-20 left-1/2 top-1/2 -translate-x-1/2 -translate-y-1/2'>
+          <div
+            className='absolute z-20 left-1/2 -translate-x-1/2 -translate-y-1/2'
+            style={{
+              top: `${height / 2}px`,
+            }}
+          >
             <div className='relative'>
               <motion.img
                 layout
@@ -112,7 +117,6 @@ const Carousel = ({ isOpen, setIsOpen }) => {
                 className={`cursor-zoom-out pointer-events-auto`}
                 style={{
                   height: `${height / 1.2}px`,
-                  top: `${height / 2}px`,
                 }}
               />
               <MdArrowForwardIos
