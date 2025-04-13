@@ -28,15 +28,15 @@ const About = () => {
   return (
     <>
       <section id='contacts' ref={ref} className='relative'>
-        <h2 className='hidden'>О компании ООО "ЛСК"</h2>
+        <h2 className='hidden'>История предприятия и документы, подтверждающие качество товара.</h2>
         {isOpen && <DisableBodyScroll />}
-        <div className='max-sm:mx-5 mx-16 pt-32 max-sm:pt-0 pb-8 border-x border-[#242424]'>
+        <div className='mx-5 sm:mx-16 pt-32 max-sm:pt-0 pb-8 border-x border-dark'>
           <div className=''>
-            <div className='flex max-sm:flex-col-reverse'>
-              <motion.div className='max-sm:hidden basis-[40%]'>
+            <div className='flex flex-col-reverse xl:flex-row'>
+              <motion.div className='max-xl:hidden basis-[40%]'>
                 <Carousel isOpen={isOpen} setIsOpen={setIsOpen} />
               </motion.div>
-              <div className='md:hidden w-full mt-10 grid place-items-center'>
+              <div className='xl:hidden w-full mt-10 grid place-items-center'>
                 {cards.map((card) => (
                   <SwipeCards
                     key={card.id}
@@ -75,7 +75,7 @@ const About = () => {
           >
             наши преимущества
             <motion.div
-              className='max-sm:hidden max-sm:gap-y-8 flex justify-evenly mt-8'
+              className='hidden max-sm:gap-y-8 md:flex justify-evenly mt-8'
               initial={{
                 y: 50,
                 opacity: 0,
