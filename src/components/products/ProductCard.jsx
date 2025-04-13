@@ -7,37 +7,39 @@ const ProductCard = ({
   frost,
   greediness,
   stateStandard,
-  price
+  price,
 }) => {
   return (
-    <div className='flex flex-col gap-1 pt-4 border boorde-[#242424] rounded-2xl bg-white drop-shadow-[0_5px_5px_rgba(0,0,0,1)]'>
-      <div className='font-prata text-lg uppercase font-semibold tracking-wider text-center text-[#242424]'>
+    <li className='flex flex-col gap-1 pt-4 border border-dark rounded-2xl bg-white drop-shadow-[0_5px_5px_rgba(0,0,0,1)]'>
+      <header className='font-prata text-lg uppercase font-semibold tracking-wider text-center text-dark'>
         {name}
-      </div>
-      <div className='flex basis-1/2 m-4 gap-3'>
+      </header>
+      <article className='flex m-4 gap-3'>
         <div>
           <img
             src={image[0]}
             alt={name}
+            height='294'
+            width='258'
             className='object-cover h-max-[294px] w-max-[258px] rounded-2xl'
           />
         </div>
-        <div className='flex flex-col pt-6 font-philosopher text-sm text-start normal-case text-[#242424]'>
-          {strength && <div>Марка прочности: {strength}</div>}
-          {frost && <div>Морозостойкость: {frost}</div>}
-          {greediness && <div>Лещадность; {greediness}</div>}
+        <div className='flex flex-col sm:pt-6 font-philosopher text-xs sm:text-sm text-start normal-case text-dark'>
+          {strength && <p>Марка прочности: {strength}</p>}
+          {frost && <p>Морозостойкость: {frost}</p>}
+          {greediness && <p>Лещадность; {greediness}</p>}
           {stateStandard && (
             <>
-              <div className='pt-8'>Соответствует</div>
+              <p className='pt-2 sm:pt-8'>Соответствует</p>
               {stateStandard.map((item, index) => (
-                <div key={index}>{item}</div>
+                <p key={index}>{item}</p>
               ))}
             </>
           )}
-          {price && <div className=''>Цена: {price} руб./тонна с НДС</div>}
+          {price && <p className=''>Цена: {price} руб./тонна с НДС</p>}
         </div>
-      </div>
-    </div>
+      </article>
+    </li>
   );
 };
 export default ProductCard;
