@@ -53,7 +53,7 @@ const About = () => {
                 className={`md:basis-[60%] px-12' + ${isOpen ? 'blur-xs' : ''}`}
               >
                 <h1 className='font-prata text-6xl text-center mb-8'>О нас</h1>
-                <div className='max-h-[700px] max-sm:max-h-[350px] overflow-y-auto'>
+                <div> className='max-h-[700px] max-sm:max-h-[350px] overflow-y-auto'>
                   {aboutCompany.map((item, index) => (
                     <div
                       key={index}
@@ -92,17 +92,17 @@ const About = () => {
             >
               <Skill
                 image={wagon}
-                alt={'ЖД'}
+                alt=''
                 text={`Возможность\nдоставки\nжелезнодорожным\nтранспортом`}
               />
               <Skill
                 image={skill}
-                alt={'V'}
+                alt=''
                 text={`Высокое\nкачество\nматериала`}
               />
               <Skill
                 image={experience}
-                alt={'V'}
+                alt=''
                 text={`Опыт работы\nболее 18 лет`}
               />
             </motion.div>
@@ -124,7 +124,7 @@ const About = () => {
             >
               <Skill
                 image={wagon}
-                alt={'ЖД'}
+                alt=''
                 text={`Возможность\nдоставки\nжелезнодорожным\nтранспортом`}
               />
             </motion.div>
@@ -146,7 +146,7 @@ const About = () => {
             >
               <Skill
                 image={skill}
-                alt={'V'}
+                alt=''
                 text={`Высокое\nкачество\nматериала`}
               />
             </motion.div>
@@ -168,7 +168,7 @@ const About = () => {
             >
               <Skill
                 image={experience}
-                alt={'V'}
+                alt=''
                 text={`Опыт работы\nболее 18 лет`}
               />
             </motion.div>
