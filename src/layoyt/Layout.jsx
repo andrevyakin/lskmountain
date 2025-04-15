@@ -3,7 +3,7 @@ import Footer from './Footer.jsx';
 
 const Layout = ({ children }) => {
   return (
-    <div id='layout' className=''>
+    <div id='layout' className='max-sm:overflow-x-hidden'>
       <Header />
       <h1 className='hidden'>
         <em>Официальный сайт ООО "Лайт Стоун Компани"</em>

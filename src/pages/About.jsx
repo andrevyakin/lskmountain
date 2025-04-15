@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { motion } from 'framer-motion';
 import Carousel from '../components/about/Carousel.jsx';
 import Skill from '../components/about/Skill.jsx';
-import { experience, skill, wagon } from '../assets/index.js';
+import { experience, skill, wagon } from '../assets/about';
 import { aboutCompany } from '../constants/aboutСompany.js';
 import DisableBodyScroll from '../utils/DisableBodyScroll.js';
 import { certificates as images } from '../assets/certificates/index.js';
@@ -53,11 +53,11 @@ const About = () => {
                 className={`md:basis-[60%] px-12' + ${isOpen ? 'blur-xs' : ''}`}
               >
                 <h1 className='font-prata text-6xl text-center mb-8'>О нас</h1>
-                <div> className='max-h-[700px] max-sm:max-h-[350px] overflow-y-auto'>
+                <div className='max-h-[700px] max-sm:max-h-[350px] max-sm:bg-dark/90 max-sm:mx-5 max-sm:rounded-2xl overflow-y-auto'>
                   {aboutCompany.map((item, index) => (
                     <div
                       key={index}
-                      className='font-philosopher text-2xl indent-20 px-16'
+                      className='font-philosopher text-base sm:text-2xl text-light sm:text-dark indent-4 sm:indent-20 text-justify mx-2 sm:px-16 max-sm:py-2'
                     >
                       {item}
                     </div>
