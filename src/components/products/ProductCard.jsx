@@ -10,32 +10,31 @@ const ProductCard = ({
   price,
 }) => {
   return (
-    <li className='flex flex-col gap-1 pt-4 border border-dark rounded-2xl bg-white drop-shadow-[0_5px_5px_rgba(0,0,0,1)] 3xl:h-96 3xl:w-150'>
-      <header className='font-prata text-lg uppercase font-semibold tracking-wider text-center text-dark'>
+    <li className='flex flex-col gap-1 pt-4 border border-dark rounded-2xl bg-white drop-shadow-[0_5px_5px_rgba(0,0,0,1)] 3xl:h-140 3xl:w-200'>
+      <header className='font-prata text-lg 3xl:text-4xl uppercase font-semibold tracking-wider text-center text-dark'>
         {name}
       </header>
       <article className='flex m-4 gap-3'>
-        {/*- m или обрезать фото*/}
-        <div className='3xl:hidden -my-12 -mx-6'>
+        <div className='3xl:hidden'>
           <img
             src={image[0]}
             alt={name}
             height='294'
             width='258'
-            className='object-cover h-max-[294px] w-max-[258px] rounded-2xl'
+            className='object-cover h-max-[294px] w-max-[258px]'
           />
         </div>
-        <div className='max-3xl:hidden -my-12 -mx-6'>
+        <div className='max-3xl:hidden'>
           <img
             src={image[0]}
             alt={name}
-            height='382'
-            width='335'
-            className='object-cover h-max-[382px] w-max-[335px] rounded-2xl'
+            height='700'
+            width='480'
+            className='object-cover h-max-[700px] w-max-[480px] mt-8'
           />
         </div>
         <div
-          className='flex flex-col justify-center font-philosopher text-xs sm:text-sm text-start normal-case text-dark'>
+          className='flex flex-col justify-center font-philosopher text-xs sm:text-sm 3xl:text-2xl text-start normal-case text-dark'>
           {strength && <p>Марка прочности: {strength}</p>}
           {frost && <p>Морозостойкость: {frost}</p>}
           {greediness && <p>Лещадность; {greediness}</p>}

@@ -42,7 +42,7 @@ const Products = () => {
             </div>
 
             <motion.ul
-              className='max-sm:hidden flex flex-row basis-1/3 justify-evenly gap-16 flex-wrap my-16'
+              className='max-md:hidden flex flex-row basis-1/3 justify-evenly gap-16 flex-wrap my-16'
               variants={variants}
               initial='initial'
               whileInView='whileInView'
