@@ -1,6 +1,6 @@
 import hero1 from './hero-1.jpg';
 import hero2 from './hero-2.jpg';
-import logoLight from './logo.png';
+import logoLight from './logo.svg';
 import logoLetter from './lskNoBg.png';
 import mailLight from './mail.png';
 import phoneLight from './phone.png';
