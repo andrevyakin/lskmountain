@@ -79,13 +79,13 @@ const Header = () => {
       >
         <nav
           ref={refNav}
-          className='max-sm:hidden flex justify-evenly items-center px-0 lg:px-28 font-prata text-xs xl:text-base 2xl:text-2xl 3xl:text-2xl uppercase tracking-wider border-b '
+          className='max-sm:hidden flex justify-evenly items-center px-0 lg:px-28 font-prima text-xs xl:text-base 2xl:text-2xl 3xl:text-2xl uppercase tracking-wider border-b '
         >
           <div className='h-min-[50px] w-min-[135px] 2xl:h-[100px] 2xl:w-[270px] cursor-pointer'>
             <img
               src={logoLight}
               alt='ЛСК'
-              className='h-[84px] w-[227px] mt-2 object-contain'
+              className='h-[64px] w-[207px] mt-5 object-contain'
               onClick={scroll.scrollToTop}
             />
           </div>
@@ -181,7 +181,7 @@ const Header = () => {
                             <motion.div variants={mobileLinkVars}>
                               <div className='flex flex-col items-center'>
                                 <LiaPhoneSolid className='text-3xl' />
-                                <p className='text-xl font-prata'>
+                                <p className='text-xl font-prima'>
                                   +7 (959) 222 22-22
                                 </p>
                               </div>
@@ -194,14 +194,14 @@ const Header = () => {
                             <motion.div variants={mobileLinkVars}>
                               <div className='flex flex-col items-center'>
                                 <VscMail className='text-3xl' />
-                                <p className='text-xl font-prata'>
+                                <p className='text-xl font-prima'>
                                   ooolsklpr@mail.ru
                                 </p>
                               </div>
                             </motion.div>
                           </a>
                         </div>
-                        <nav className='flex flex-col items-center gap-8 text-3xl font-prata uppercase'>
+                        <nav className='flex flex-col items-center gap-8 text-3xl font-prima uppercase'>
                           <motion.div variants={mobileLinkVars}>
                             <Link
                               to='hero'
@@ -240,7 +240,7 @@ const Header = () => {
                                   disableScroll.off();
                                   setMobileNav(!mobileNav);
                                 }}
-                                className='font-prata text-xl'
+                                className='font-prima text-xl'
                               >
                                 щебень
                               </Link>
@@ -253,7 +253,7 @@ const Header = () => {
                                   disableScroll.off();
                                   setMobileNav(!mobileNav);
                                 }}
-                                className='font-prata text-xl'
+                                className='font-prima text-xl'
                               >
                                 щпс
                               </Link>
@@ -266,7 +266,7 @@ const Header = () => {
                                   disableScroll.off();
                                   setMobileNav(!mobileNav);
                                 }}
-                                className='font-prata text-xl'
+                                className='font-prima text-xl'
                               >
                                 отсев
                               </Link>

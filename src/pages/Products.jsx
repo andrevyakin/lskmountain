@@ -35,7 +35,7 @@ const Products = () => {
           <li key={c._id} id={c._id} className='pt-8'>
             <div className='flex items-center '>
               <div className='grow h-[1px] bg-dark' />
-              <header className='grow-0  p-3 border-1 border-dark font-prata text-[clamp(30px,3.13vw,60px)] text-center uppercase tracking-wide font-normal  text-dark'>
+              <header className='grow-0  p-3 border-1 border-dark font-prima text-[clamp(30px,3.13vw,60px)] text-center uppercase tracking-wide font-normal  text-dark'>
                 {c.name}
               </header>
               <div className='grow h-[1px] bg-dark' />

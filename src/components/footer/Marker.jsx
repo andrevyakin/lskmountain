@@ -15,7 +15,7 @@ const Marker = ({ isOpen, onClick }) => {
       <motion.div
         layout
         transition={transition}
-        className='absolute text-center left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] font-philosopher  text-[#232323] text-base font-semibold normal-case tracking-widest'
+        className='absolute text-center left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] font-second  text-[#232323] text-base font-semibold normal-case tracking-widest'
       >
         Филиал "Петровский" ООО "ЛСК"
       </motion.div>
@@ -30,7 +30,7 @@ const Marker = ({ isOpen, onClick }) => {
       <motion.div
         layout
         transition={transition}
-        className='absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] font-prata  text-[#232323] text-base font-black uppercase tracking-widest rotate-47'
+        className='absolute left-[50%] top-[50%] -translate-x-[50%] -translate-y-[50%] font-prima  text-[#232323] text-base font-black uppercase tracking-widest rotate-47'
       >
         лск
       </motion.div>

@@ -11,7 +11,7 @@ const ProductCard = ({
 }) => {
   return (
     <li className='flex flex-col gap-1 pt-4 border border-dark rounded-2xl bg-white drop-shadow-[0_5px_5px_rgba(0,0,0,1)] 3xl:h-140 3xl:w-200'>
-      <header className='font-prata text-lg 3xl:text-4xl uppercase font-semibold tracking-wider text-center text-dark'>
+      <header className='font-prima text-lg 3xl:text-4xl uppercase font-semibold tracking-wider text-center text-dark'>
         {name}
       </header>
       <article className='flex m-4 gap-3'>
@@ -34,7 +34,7 @@ const ProductCard = ({
           />
         </div>
         <div
-          className='flex flex-col justify-center font-philosopher text-xs sm:text-sm 3xl:text-2xl text-start normal-case text-dark'>
+          className='flex flex-col justify-center font-second text-xs sm:text-sm 3xl:text-2xl text-start normal-case text-dark'>
           {strength && <p>Марка прочности: {strength}</p>}
           {frost && <p>Морозостойкость: {frost}</p>}
           {greediness && <p>Лещадность; {greediness}</p>}

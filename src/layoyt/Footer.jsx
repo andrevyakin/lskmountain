@@ -33,7 +33,7 @@ const Footer = () => {
                      }}
             >
               <h3
-                className='relative  font-prata text-center text-light font-medium tracking-wider uppercase
+                className='relative  font-prima text-center text-light font-medium tracking-wider uppercase
               text-5xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl'
               >
                 контакты
@@ -42,11 +42,12 @@ const Footer = () => {
                 w-80 sm:w-48 md:w-58 lg:w-78 xl:w-98 2xl:w-116'
                 />
               </h3>
-              <p className='mt-6 sm:mt-6 font-philosopher text-center text-light text-base/7.5 sm:text-sm md:text-sm/6 lg:text-base/7 xl:text-xl/9 2xl:text-2xl/10 sm:mb-2'>
+              <p className='mt-6 sm:mt-6 font-prima text-center text-light text-base/7.5 sm:text-sm md:text-sm/6 lg:text-base/7 xl:text-xl/9 2xl:text-2xl/10 sm:mb-2'>
                 +7 (959) 222 22-22
                 <br />
                 ooolsklpr@mail.ru
-                <br />
+                <br /></p>
+              <p className='font-second text-center text-light text-base/7.5 sm:text-sm md:text-sm/6 lg:text-base/7 xl:text-xl/9 2xl:text-2xl/10 sm:mb-2'>
                 Юр. адрес: ДНР, Донецк, <br className='md:hidden' />
                 ул. Фёдора Зайцева, 75/20
                 <br />

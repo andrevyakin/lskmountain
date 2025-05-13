@@ -52,12 +52,12 @@ const About = () => {
               <div
                 className={`md:basis-[60%] px-12' + ${isOpen ? 'blur-xs' : ''}`}
               >
-                <h1 className='font-prata text-6xl text-center mb-8'>О нас</h1>
+                <h1 className='font-prima text-6xl text-center mb-8'>О нас</h1>
                 <div className='max-h-[700px] max-sm:max-h-[350px] max-sm:bg-dark/90 max-sm:mx-5 max-sm:rounded-2xl overflow-y-auto'>
                   {aboutCompany.map((item, index) => (
                     <div
                       key={index}
-                      className='font-philosopher text-base sm:text-2xl text-light sm:text-dark indent-4 sm:indent-20 text-justify mx-2 sm:px-16 max-sm:py-2'
+                      className='font-second text-base sm:text-2xl text-light sm:text-dark indent-4 sm:indent-20 text-justify mx-2 sm:px-16 max-sm:py-2'
                     >
                       {item}
                     </div>
@@ -68,7 +68,7 @@ const About = () => {
           </div>
           <div
             className={
-              'font-prata mt-40 max-sm:mt-20 text-5xl max-sm:text-3xl font-medium tracking-widest uppercase text-center text-dark' +
+              'font-prima mt-40 max-sm:mt-20 text-5xl max-sm:text-3xl font-medium tracking-widest uppercase text-center text-dark' +
               ' ' +
               `${isOpen ? 'blur-xs' : ''}`
             }
