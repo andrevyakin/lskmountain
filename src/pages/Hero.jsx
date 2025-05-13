@@ -18,11 +18,11 @@ const Hero = () => {
               <li className='flex flex-col sm:flex-row'>
                 <Wrapper>
                   <div className='flex flex-col gap-4 font-prima uppercase text-light text-[clamp(20px,2.5vw,48px)]'>
-                    <h3 className=''>щебень, щпс, отсев</h3>
-                    <h4 className='relative translate-x-1/12 text-center tracking-wide font-second text-[clamp(16px,2.03vw,39px)]'>
-                      <span className='absolute left-0 top-1/2 -translate-x-1/3 w-12 md:w-14 lg:w-17 xl:w-23 2xl:w-28 3xl:w-32 h-[1px] bg-light' />
-                      от производителя
-                    </h4>
+                    петровеньковское
+                    <br />
+                    месторождение
+                    <br />
+                    песчаника
                   </div>
                 </Wrapper>
                 <Wrapper>
@@ -54,11 +54,11 @@ const Hero = () => {
                   xl:text-[clamp(20px,2.5vw,48px)]/16
                   2xl:text-[clamp(20px,2.5vw,48px)]/20'
                   >
-                    петровеньковское
-                    <br />
-                    месторождение
-                    <br />
-                    песчаника
+                    <h3 className=''>щебень, щпс, отсев</h3>
+                    <h4 className='relative translate-x-1/12 text-center tracking-wide font-second text-[clamp(16px,2.03vw,39px)]'>
+                      <span className='absolute left-0 top-1/2 -translate-x-1/3 w-12 md:w-14 lg:w-17 xl:w-23 2xl:w-28 3xl:w-32 h-[1px] bg-light' />
+                      от производителя
+                    </h4>
                   </h3>
                 </Wrapper>
               </li>
