@@ -10,12 +10,17 @@ import { TbTriangleInvertedFilled } from 'react-icons/tb';
 import navbar from '../constants/navbar.json';
 import FlyoutLink from '../components/header/FlyoutLink.jsx';
 import ProductsContent from '../components/header/ProductsContent.jsx';
+import { category, products } from '../assets/products';
 
 const Header = () => {
   const [activeLink, setActiveLink] = useState(null);
   const [mobileNav, setMobileNav] = useState(false);
   const [heightNav, setHeightNav] = useState(0);
   const refNav = useRef(null);
+  const categoryFilter = category.filter(
+    (i) =>
+      products.filter((j) => j._id.includes(i._id) && j.image.length).length,
+  );
   useEffect(() => {
     setHeightNav(refNav.current.clientHeight * -1);
   }, [heightNav, refNav]);
@@ -229,48 +234,24 @@ const Header = () => {
                                 продукция
                               </Link>
                             </motion.div>
-                            <motion.div variants={mobileLinkVars}>
-                              <TbTriangleInvertedFilled />
-                            </motion.div>
-                            <motion.div variants={mobileLinkVars}>
-                              <Link
-                                to='a'
-                                offset={-32}
-                                onClick={() => {
-                                  disableScroll.off();
-                                  setMobileNav(!mobileNav);
-                                }}
-                                className='font-prima text-xl'
-                              >
-                                щебень
-                              </Link>
-                            </motion.div>
-                            <motion.div variants={mobileLinkVars}>
-                              <Link
-                                to='b'
-                                offset={-32}
-                                onClick={() => {
-                                  disableScroll.off();
-                                  setMobileNav(!mobileNav);
-                                }}
-                                className='font-prima text-xl'
-                              >
-                                щпс
-                              </Link>
-                            </motion.div>
-                            <motion.div variants={mobileLinkVars}>
-                              <Link
-                                to='c'
-                                offset={-32}
-                                onClick={() => {
-                                  disableScroll.off();
-                                  setMobileNav(!mobileNav);
-                                }}
-                                className='font-prima text-xl'
-                              >
-                                отсев
-                              </Link>
-                            </motion.div>
+
+                              <motion.div variants={mobileLinkVars}>
+                                <TbTriangleInvertedFilled />
+                              </motion.div>
+                            { categoryFilter.map((i) => (<motion.div variants={mobileLinkVars} key={i._id}>
+                                <Link
+                                  to={i._id}
+                                  offset={-32}
+                                  onClick={() => {
+                                    disableScroll.off();
+                                    setMobileNav(!mobileNav);
+                                  }}
+                                  className='font-prima text-xl'
+                                >
+                                  {i.acronym}
+                                </Link>
+                              </motion.div>))}
+
                           </div>
                           <motion.div variants={mobileLinkVars}>
                             <Link
@@ -284,7 +265,10 @@ const Header = () => {
                               о нас
                             </Link>
                           </motion.div>
-                           <motion.div variants={mobileLinkVars} className='h-[2px] w-dvw scale-90 bg-[#f0f0f0]'/>
+                          <motion.div
+                            variants={mobileLinkVars}
+                            className='h-[2px] w-dvw scale-90 bg-[#f0f0f0]'
+                          />
                         </nav>
                       </motion.div>
                     </div>

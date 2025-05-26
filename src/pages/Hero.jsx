@@ -46,7 +46,7 @@ const Hero = () => {
                   />
                 </Wrapper>
                 <Wrapper>
-                  <h3
+                  <div
                     className='font-prima uppercase text-light
                   text-[clamp(20px,2.5vw,48px)]/10
                   sm:text-[clamp(20px,2.5vw,48px)]/8
@@ -59,7 +59,7 @@ const Hero = () => {
                       <span className='absolute left-0 top-1/2 -translate-x-1/3 w-7 md:w-7 lg:w-9 xl:w-12 2xl:w-15 3xl:w-18 h-[1px] bg-light' />
                       от производителя
                     </h4>
-                  </h3>
+                  </div>
                 </Wrapper>
               </li>
             </ul>
