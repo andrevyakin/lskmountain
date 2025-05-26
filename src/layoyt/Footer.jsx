@@ -31,7 +31,7 @@ const Footer = () => {
               className='w-full sm:w-1/2  mt-4 py-4'
               ref={ref}
               style={{
-                height: fullWidth < 640 ? `${fullHeight * 0.3}px` : '',
+                height: fullWidth < 640 ? `${fullHeight * 0.5 - 32}px` : '',
               }}
             >
               <h3
