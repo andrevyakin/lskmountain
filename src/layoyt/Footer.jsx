@@ -13,7 +13,7 @@ const Footer = () => {
   }, [height, ref.current]);
 
   return (
-    <footer className='bg-dark' >
+    <footer className='bg-dark'>
       <h2 className='hidden'>Местонахождение на Яндекс карте и контакты.</h2>
       <div className='bg-[url(/bg_mountain_10.png)] bg-no-repeat bg-cover'>
         <div className='bg-[rgba(0,0,0,.25)]'>
@@ -27,10 +27,12 @@ const Footer = () => {
               <YandexMap />
             </div>
 
-            <article className='w-full sm:w-1/2  mt-4 py-4' ref={ref}
-                     style={{
-                        height: fullWidth < 640 ? `${fullHeight*0.5-64/2}px` : '',
-                     }}
+            <article
+              className='w-full sm:w-1/2  mt-4 py-4'
+              ref={ref}
+              style={{
+                height: fullWidth < 640 ? `${fullHeight * 0.3}px` : '',
+              }}
             >
               <h3
                 className='relative  font-prima text-center text-light font-medium tracking-wider uppercase
@@ -42,11 +44,16 @@ const Footer = () => {
                 w-80 sm:w-48 md:w-58 lg:w-78 xl:w-98 2xl:w-116'
                 />
               </h3>
-              <p className='mt-6 sm:mt-6 font-prima text-center text-light text-base/7.5 sm:text-sm md:text-sm/6 lg:text-base/7 xl:text-xl/9 2xl:text-2xl/10 sm:mb-2'>
-                +7 (959) 222 22-22
-                <br />
-                ooolsklpr@mail.ru
-                <br /></p>
+              <a href='tel:+79595884488'>
+                <p className='mt-8 sm:mt-6 font-prima text-center text-light text-base/7.5 sm:text-sm md:text-sm/6 lg:text-base/7 xl:text-xl/9 2xl:text-2xl/10 sm:mb-2'>
+                  +7 (959) 588 44-88
+                </p>
+              </a>
+              <a href='mailto:ooolsklpr@mail.ru'>
+                <p className='font-prima text-center text-light text-base/7.5 sm:text-sm md:text-sm/6 lg:text-base/7 xl:text-xl/9 2xl:text-2xl/10 sm:mb-2'>
+                  ooolsklpr@mail.ru'
+                </p>
+              </a>
               <p className='font-second text-center text-light text-base/7.5 sm:text-sm md:text-sm/6 lg:text-base/7 xl:text-xl/9 2xl:text-2xl/10 sm:mb-2'>
                 Юр. адрес: ДНР, Донецк, <br className='md:hidden' />
                 ул. Фёдора Зайцева, 75/20

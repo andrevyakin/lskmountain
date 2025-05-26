@@ -111,11 +111,11 @@ const Header = () => {
           ))}
           <div className='flex flex-col gap-1.5'>
             <a
-              href='tel:+79592222222'
+              href='tel:+79595884488'
               className='flex items-center text-xs xl:text-base 2xl:text-lg lowercase'
             >
               <LiaPhoneSolid className='text-3xl' />
-              <p className='indent-2'>+7 (959) 222 22-22</p>
+              <p className='indent-2'>+7 (959) 588 44-88</p>
             </a>
             <a
               href='mailto:ooolsklpr@mail.ru'
@@ -175,14 +175,14 @@ const Header = () => {
                       >
                         <div className='flex flex-col gap-3'>
                           <a
-                            href='tel:+79592222222'
+                            href='tel:+79595884488'
                             /*className="flex items-center text-xs xl:text-base 2xl:text-lg lowercase"*/
                           >
                             <motion.div variants={mobileLinkVars}>
                               <div className='flex flex-col items-center'>
                                 <LiaPhoneSolid className='text-3xl' />
                                 <p className='text-xl font-prima'>
-                                  +7 (959) 222 22-22
+                                  +7 (959) 588 44-88
                                 </p>
                               </div>
                             </motion.div>
