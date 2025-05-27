@@ -87,12 +87,14 @@ const Header = () => {
           className='max-sm:hidden flex justify-evenly items-center px-0 lg:px-28 font-prima text-xs xl:text-base 2xl:text-2xl 3xl:text-2xl uppercase tracking-wider border-b '
         >
           <div className='h-min-[50px] w-min-[135px] 2xl:h-[100px] 2xl:w-[270px] cursor-pointer'>
-            <img
-              src={logoLight}
-              alt='ЛСК'
-              className='h-[64px] w-[207px] mt-5 object-contain'
-              onClick={scroll.scrollToTop}
-            />
+            <a href='https://ooolsklpr.ru/'>
+              <img
+                src={logoLight}
+                alt='ЛСК'
+                className='h-[64px] w-[207px] mt-5 object-contain'
+                /*onClick={scroll.scrollToTop}*/
+              />
+            </a>
           </div>
           {navbar.map((i) => (
             <FlyoutLink
@@ -235,10 +237,11 @@ const Header = () => {
                               </Link>
                             </motion.div>
 
-                              <motion.div variants={mobileLinkVars}>
-                                <TbTriangleInvertedFilled />
-                              </motion.div>
-                            { categoryFilter.map((i) => (<motion.div variants={mobileLinkVars} key={i._id}>
+                            <motion.div variants={mobileLinkVars}>
+                              <TbTriangleInvertedFilled />
+                            </motion.div>
+                            {categoryFilter.map((i) => (
+                              <motion.div variants={mobileLinkVars} key={i._id}>
                                 <Link
                                   to={i._id}
                                   offset={-32}
@@ -250,8 +253,8 @@ const Header = () => {
                                 >
                                   {i.acronym}
                                 </Link>
-                              </motion.div>))}
-
+                              </motion.div>
+                            ))}
                           </div>
                           <motion.div variants={mobileLinkVars}>
                             <Link
